@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Obatvitamin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Obatvitamin\ObatvitaminResource;
 use App\Models\obatvitamin;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class ObatvitaminController extends Controller
     public function index()
     {
         $obat_vitamin = obatvitamin::get();
-        
+        return ObatvitaminResource::collection($obat_vitamin);
     }
 
     /**
@@ -22,7 +23,7 @@ class ObatvitaminController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -30,7 +31,19 @@ class ObatvitaminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate(
+            [
+                'nama'      =>'required',
+                'deskripsi' =>'required',
+                'umur'      =>'required',
+            ]);
+            $add = obatvitamin::create(
+                [
+                    'nama'      => $request->nama,
+                    'deskripsi' => $request->deskripsi,
+                    'umur'      => $request->umur,
+                ]);
+                return $add;
     }
 
     /**
@@ -38,23 +51,29 @@ class ObatvitaminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $Obatvitamin = obatvitamin::where('id',$id)->first();
+        if ($Obatvitamin)
+        {
+            return response()->json(array(
+                'message'   => 'Obat atau vitamin tersedia',
+                'status'    => 'success',
+                'code'      => 200,
+            ));
+        }
+        return response()->json(array(
+            'message'       =>'Obat atau vitamin tidak ditemukan',
+            'status'        =>'not found',
+            'code'          => 404,
+        ));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+
     }
 
     /**

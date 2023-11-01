@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Obatvitamin\ObatvitaminController;
 use App\Models\obatvitamin;
@@ -16,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('register', [AuthController::class,'register']);
 Route::apiResource('obat_dan_vitamin', App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
+Route::post('login', [AuthController::class,'login']);
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
+
+Route::middleware(['auth:api'])->group(function()
+{
+    Route::post('logout', [AuthController::class, 'logout']);
+});
