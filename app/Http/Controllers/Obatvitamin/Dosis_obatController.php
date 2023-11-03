@@ -13,9 +13,9 @@ class Dosis_obatController extends Controller
     {
         // var_dump(20);
         // exit;
-        $dosisdewasa = umur::where('umur' >= 'obat_dewasa')->get();
+        $dosisdewasa = umur::where('umur' >= 13)->get();
 
-        $dosisanak = umur::where('umur' < 'obat_anak')->get();
+        $dosisanak = umur::where('umur' < 12)->get();
 
         if('umur'>='obat_dewasa')
         {
