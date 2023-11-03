@@ -17,7 +17,7 @@ class UmurResource extends JsonResource
         return[
         // return parent::toArray($request);
         'id'            => $this->id,
-        'umur' => $this->umur,
+        'umur_pengguna' => $this->umur_pengguna,
         ];
     }
 }

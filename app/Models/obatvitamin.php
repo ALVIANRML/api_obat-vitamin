@@ -14,9 +14,8 @@ class obatvitamin extends Model
     [
         'nama',
         'deskripsi',
-        'obat_dewasa',
-        'obat_anak',
-        'penyakit_id',
+        'umur_obat',
+
     ];
     public function umur()
     {return $this->belongsTo(umur::class, 'umur_id');}

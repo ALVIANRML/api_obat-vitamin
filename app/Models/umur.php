@@ -12,7 +12,7 @@ class umur extends Model
     protected $table ='umur';
     protected $fillable =
     [
-        'umur',
+        'umur_pengguna',
     ];
     public function obatvitamin()
     {return $this->hasmany(obatvitamin::class, 'obatvitamin_id');}

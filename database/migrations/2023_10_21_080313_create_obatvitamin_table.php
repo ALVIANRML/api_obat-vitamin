@@ -15,8 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('nama')->nullable();
             $table->string('deskripsi')->nullable();
-            $table->integer('umur_anak')->nullable();
-            $table->integer('umur_dewasa')->nullable();
+            $table->integer('umur_obat')->nullable();
             $table->uuid('penyakit_id')->nullable();
             $table->timestamps();
 
