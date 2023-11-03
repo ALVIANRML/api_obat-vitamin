@@ -9,11 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 class obatvitamin extends Model
 {
     use HasFactory, HasUuids;
-    protected $primarykey   ='obatvitamin';
+    protected $table   ='obatvitamin';
     protected $fillable     =
     [
         'nama',
         'deskripsi',
-        'umur',
+        'obat_dewasa',
+        'obat_anak',
+        'penyakit_id',
     ];
+    public function umur()
+    {return $this->belongsTo(umur::class, 'umur_id');}
 }

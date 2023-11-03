@@ -11,18 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('obatvitamin', function (Blueprint $table) {
+        Schema::create('umur', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('nama')->nullable();
-            $table->string('deskripsi')->nullable();
-            $table->integer('umur_anak')->nullable();
-            $table->integer('umur_dewasa')->nullable();
-            $table->uuid('penyakit_id')->nullable();
+            $table->integer('umur')->nullable();
             $table->timestamps();
-
-
         });
-
     }
 
     /**
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('obatvitamin');
+        Schema::dropIfExists('umur');
     }
 };

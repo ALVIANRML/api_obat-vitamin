@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Obatvitamin\Dosis_obatController;
 use App\Http\Controllers\Obatvitamin\ObatvitaminController;
+
 use App\Models\obatvitamin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +21,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::post('register', [AuthController::class,'register']);
-Route::apiResource('obat_dan_vitamin', App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
-Route::post('login', [AuthController::class,'login']);
+
+Route::get('confirm-obat', [Dosis_obatController::class,'ConfirmObat']);
+Route::apiResource('umur', App\Http\Controllers\Umur\UmurController::class);
 
 
 
-Route::middleware(['auth:api'])->group(function()
-{
-    Route::post('logout', [AuthController::class, 'logout']);
-});
+// Route::middleware(['auth:api'])->group(function()
+// {
+
+    Route::apiResource('obat_dan_vitamin', App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
+    // Route::get('obat_dan_vitamin', [ObatvitaminController::class, 'umur']);
+    Route::apiResource('umur', App\Http\Controllers\Umur\UmurController::class);
+// });
