@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('penyebab')->nullable();
             $table->string('pengobatan')->nullable();
-            $table->uuid('obat_vitamin_id')->nullable();
+            $table->uuid('obatvitamin_id')->nullable();
             $table->timestamps();
         });
     }
