@@ -28,12 +28,12 @@ class UmurController extends Controller
         //     exit;
         $request -> validate(
             [
-                'umur'  => 'required',
+                'umur_pengguna'  => 'required',
             ]);
 
             $add =umur::create(
                 [
-                    'umur'  => $request->umur,
+                    'umur_pengguna'  => $request->umur_pengguna,
                 ]);
                 return $add;
     }
@@ -72,7 +72,7 @@ class UmurController extends Controller
                 if($umurexisted)
                 {
                     $umurexisted -> update([
-                    'umur' => $request -> umur ?? $umurexisted -> umur,
+                    'umur_pengguna' => $request -> umur_pengguna ?? $umurexisted -> umur_pengguna,
                     ]);
                     return response()->json(array(
                     [   'success' => true,

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('umur', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->integer('umur')->nullable();
+            $table->integer('umur_pengguna')->nullable();
             $table->timestamps();
         });
     }
