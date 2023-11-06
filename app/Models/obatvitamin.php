@@ -14,7 +14,8 @@ class obatvitamin extends Model
     [
         'nama',
         'deskripsi',
-        'umur_obat',
+        'obat_anak',
+        'obat_dewasa',
 
     ];
     public function umur()

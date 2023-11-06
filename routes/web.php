@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::apiResource('obat_dan_vitamin', App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
 
-Route::get('obat_dan_vitamin', function () {
-        return view('vitamin_obat');
-});
+
+// Route::get('obat_dan_vitamin', function () {
+//         return view('vitamin_obat');
+// });

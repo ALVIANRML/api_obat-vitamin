@@ -19,37 +19,6 @@ class ObatvitaminController extends Controller
         return ObatvitaminResource::collection($obat_vitamin);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    // public function umur_dewasa()
-    // {
-    //     $obatanak   = obatvitamin::where('umur_dewasa' <= 11)->get();
-    //     $obatdewasa = obatvitamin::where('umur_dewasa' > 11 )->get();
-
-    //     if ('umur_dewasa' <= 11)
-    //     {
-    //         return response()(array(
-    //         [
-    //             'message'   => 'obat anak tersedia',
-    //             'success'   => true,
-    //             'code'      => 200,
-    //             'data'      => $obatanak
-    //         ]));
-    //     }
-
-    //     return response()(array(
-    //         [
-    //             'message'   => 'obat dewasa tersedia',
-    //             'success'   => true,
-    //             'code'      => 200,
-    //             'data'      => $obatdewasa
-    //         ]));
-
-
-    //    throw new Exception('obat tidak tersedia');
-
-    // }
 
     /**
      * Store a newly created resource in storage.
@@ -60,13 +29,17 @@ class ObatvitaminController extends Controller
             [
                 'nama'          =>'required',
                 'deskripsi'     =>'required',
-                'umur_obat'     =>'required',
+                'obat_dewasa'     =>'required',
+                'obat_anak' =>'required',
+                'penyakit_id'      => 'nullable'
             ]);
             $add = obatvitamin::create(
                 [
                     'nama'      => $request->nama,
                     'deskripsi' => $request->deskripsi,
-                    'umur_obat'      => $request->umur_obat,
+                    'obat_anak'      => $request->obat_anak,
+                    'obat_dewasa'   => $request->obat_dewasa,
+                    'penyakit_id'      =>null,
 
                 ]);
                 return $add;
@@ -106,7 +79,9 @@ class ObatvitaminController extends Controller
                     $obatvitaminexisted -> update([
                     'nama' => $request -> nama ?? $obatvitaminexisted -> nama,
                     'deskripsi' => $request -> deskripsi ?? $obatvitaminexisted -> deskripsi,
-                    'umur_obat' => $request -> umur_obat ?? $obatvitaminexisted -> umur_obat
+                    'obat_anak' => $request -> obat_anak ?? $obatvitaminexisted -> obat_anak,
+                    'obat_dewasa' => $request -> obat_dewasa ?? $obatvitaminexisted -> obat_dewasa,
+                    'penyakit_id' => $request -> penyakit_id ?? $obatvitaminexisted -> penyakit_id,
 
                 ]);
                     return response()->json(array(
