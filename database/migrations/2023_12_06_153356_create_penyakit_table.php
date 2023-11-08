@@ -11,16 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('penyakit', function (Blueprint $table) {
-            $table->text('penyebab')->nullable()->change();
-            $table->text('pengobatan')->nullable()->change();
+        Schema::create('penyakit', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('nama')->nullable();
+            $table->text('penyebab')->nullable();
+            $table->text('pengobatan')->nullable();
+            $table->uuid('obatvitamin_id')->nullable();
             $table->uuid ('gejala_id')->nullable();
 
+            $table->foreign('obatvitamin_id')
+            ->references('id')
+            ->on('obatvitamin')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            
             $table->foreign('gejala_id')
                   ->references('id')
                   ->on('gejala')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -29,8 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('penyakit', function (Blueprint $table) {
-            $table->dropColumn('gejala_id');
-        });
+        Schema::dropIfExists('penyakit');
     }
 };
