@@ -15,7 +15,12 @@ class penyakit extends Model
     ['nama',
     'penyebab',
     'pengobatan',
-    'obat_vitamin_id',
-    
+    'obatvitamin_id',
+    'gejala_id',
+
 ];
+    public function obatvitamin()
+    {return $this->belongsTo(obatvitamin::class, 'obatvitamin_id');}
+    public function gejala()
+    {return $this->belongsTo(gejala::class, 'gejala_id');}
 }
