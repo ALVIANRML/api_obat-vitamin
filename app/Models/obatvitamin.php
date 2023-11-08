@@ -16,8 +16,9 @@ class obatvitamin extends Model
         'deskripsi',
         'obat_anak',
         'obat_dewasa',
+        'penyakit_id',
 
     ];
-    public function umur()
-    {return $this->belongsTo(umur::class, 'umur_id');}
+    public function penyakit()
+    {return $this->hasMany(penyakit::class, 'penyakit_id');}
 }
