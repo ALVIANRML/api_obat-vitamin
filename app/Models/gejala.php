@@ -12,6 +12,7 @@ class gejala extends Model
     protected $table = 'gejala';
     protected $fillable =
     [
+        'id_gejala',
         'nama',
     ];
 }

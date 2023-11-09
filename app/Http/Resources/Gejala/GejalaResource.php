@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Obatvitamin;
+namespace App\Http\Resources\Gejala;
 
-use App\Models\penyakit;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ObatvitaminResource extends JsonResource
+class GejalaResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,15 +15,10 @@ class ObatvitaminResource extends JsonResource
     public function toArray(Request $request): array
     {
         // return parent::toArray($request);
-
-
         return[
-        'id'        => $this->id,
-        'nama'      => $this->nama,
-        'deskripsi' => $this->deskripsi,
-        'umur_obat' =>$this->umur_obat,
-        
-
+            'id'=>$this->id,
+            'nama'=>$this->nama,
+            'id_gejala'=>$this->id_gejala,
         ];
     }
 }
