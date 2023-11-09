@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Penyakit;
 
-use App\Http\Controllers\Controller;
+use App\Models\penyakit;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Penyakit\PenyakitResource;
 
 class PenyakitController extends Controller
 {
     public function index()
     {
         $penyakit = penyakit::get();
-        return penyakitResource::collection($penyakit);
+        return PenyakitResource::collection($penyakit);
     }
 
 
@@ -21,19 +23,19 @@ class PenyakitController extends Controller
     {
         $request -> validate(
             [
+                'id_penyakit'   =>'required',
                 'nama'          =>'required',
                 'penyebab'     =>'required',
                 'pengobatan'     =>'required',
-                'obat_vitamin_id' =>'required',
-                'gejala_id'      => 'nullable'
+
             ]);
             $add = penyakit::create(
                 [
                     'nama'      => $request->nama,
+                    'id_penyakit'      => $request->id_penyakit,
                     'penyebab' => $request->penyebab,
                     'pengobatan'      => $request->pengobatan,
-                    'obat_vitamin_id'   => null,
-                    'penyakit_id'      =>null,
+
 
                 ]);
                 return $add;
@@ -51,7 +53,7 @@ class PenyakitController extends Controller
                 'message'   => 'Penyakit: ',
                 'status'    => 'success',
                 'code'      => 200,
-                'Data'      => $obatvitaminexisted,
+                'Data'      => $penyakitexisted,
             ));
         }
         return response()->json(array(
@@ -70,12 +72,12 @@ class PenyakitController extends Controller
         $penyakitexisted = penyakit::where('id',$id)->first();
                 if($penyakitexisted)
                 {
-                    $obatvitaminexisted -> update([
+                    $penyakitexisted -> update([
                     'nama' => $request -> nama ?? $penyakitexisted -> nama,
+                    'id_penyakit' => $request -> id_penyakit ?? $penyakitexisted -> id_penyakit,
                     'penyebab' => $request -> penyebab ?? $penyakitexisted -> penyebab,
                     'pengobatan' => $request -> pengobatan ?? $penyakitexisted -> pengobatan,
-                    'obat_vitamin_id' => $request -> obat_dewasa ?? $penyakitexisted -> obat_dewasa,
-                    'gejala_id' => $request -> gejala_id ?? $penyakitexisted -> gejala_id,
+
 
                 ]);
                     return response()->json(array(

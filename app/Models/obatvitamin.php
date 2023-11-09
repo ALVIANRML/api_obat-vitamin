@@ -12,13 +12,13 @@ class obatvitamin extends Model
     protected $table   ='obatvitamin';
     protected $fillable     =
     [
+        'id_obatvitamin',
         'nama',
         'deskripsi',
         'obat_anak',
         'obat_dewasa',
-        'penyakit_id',
+
 
     ];
-    public function penyakit()
-    {return $this->hasMany(penyakit::class, 'penyakit_id');}
+
 }

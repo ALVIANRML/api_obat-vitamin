@@ -13,24 +13,10 @@ return new class extends Migration
     {
         Schema::create('penyakit', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('id_penyakit')->nullable();
             $table->string('nama')->nullable();
             $table->text('penyebab')->nullable();
             $table->text('pengobatan')->nullable();
-            $table->uuid('obatvitamin_id')->nullable();
-            $table->uuid ('gejala_id')->nullable();
-
-            $table->foreign('obatvitamin_id')
-            ->references('id')
-            ->on('obatvitamin')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
-            
-            $table->foreign('gejala_id')
-                  ->references('id')
-                  ->on('gejala')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade');
-
             $table->timestamps();
         });
     }

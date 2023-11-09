@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class umur extends Model
+class vitality extends Model
 {
-    use HasFactory,HasUuids;
-    protected $table ='umur';
+    use HasFactory, HasUuids;
+    protected $primarykey = 'vitality';
     protected $fillable =
     [
-        'umur_pengguna',
+        'obatvitamin_id',
+        'penyakit_id',
+        'gejala_id'
     ];
-    
-
 }
