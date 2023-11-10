@@ -16,4 +16,16 @@ class vitality extends Model
         'penyakit_id',
         'gejala_id'
     ];
+    public function obatvitamin()
+    {
+        return $this->hasmany(obatvitamin::class, 'obatvitamin_id');
+    }
+    public function penyakit()
+    {
+        return $this->hasMany(penyakit::class, 'penyakit_id');
+    }
+    public function gejala()
+    {
+        return $this->hasMany(gejala::class, 'gejala_id');
+    }
 }

@@ -31,12 +31,10 @@ class PenyakitController extends Controller
             ]);
             $add = penyakit::create(
                 [
-                    'nama'      => $request->nama,
                     'id_penyakit'      => $request->id_penyakit,
+                    'nama'      => $request->nama,
                     'penyebab' => $request->penyebab,
                     'pengobatan'      => $request->pengobatan,
-
-
                 ]);
                 return $add;
     }

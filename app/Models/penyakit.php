@@ -17,16 +17,10 @@ class penyakit extends Model
         'nama',
         'penyebab',
         'pengobatan',
-        
-
 ];
-    public function obatvitamin()
+public function vitality()
     {
-        return $this->hasMany(obatvitamin::class, 'obatvitamin_id');
+        return $this->belongsTo(vitality::class, 'vitality_id');
     }
 
-    public function gejala()
-    {
-        return $this->hasMany(gejala::class, 'gejala_id');
-    }
 }
