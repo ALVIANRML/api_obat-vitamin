@@ -15,4 +15,8 @@ class gejala extends Model
         'id_gejala',
         'nama',
     ];
+    public function vitality()
+    {
+        return $this->belongsTo(vitality::class, 'vitality_id');
+    }
 }

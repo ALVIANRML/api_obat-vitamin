@@ -17,8 +17,10 @@ class obatvitamin extends Model
         'deskripsi',
         'obat_anak',
         'obat_dewasa',
-
-
     ];
+    public function vitality()
+    {
+        return $this->belongsTo(vitality::class, 'vitality_id');
+    }
 
 }

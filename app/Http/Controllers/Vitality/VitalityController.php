@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Vitality;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Vitality\VitalityResource;
+use App\Models\vitality;
 use Illuminate\Http\Request;
 
 class VitalityController extends Controller
@@ -12,23 +14,31 @@ class VitalityController extends Controller
      */
     public function index()
     {
-        //
+        $vitality = vitality::get();
+        return VitalityResource::collection($vitality);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate(
+            [
+                'obatvitamin_id'    =>'required',
+                'penyakit_id'       =>'required',
+                'gejala_id'         =>'required',
+
+            ]);
+            $add = vitality::create(
+                [
+                    'obatvitamin_id'      => $request->obatvitamin_id,
+                    'penyakit_id'      => $request->penyakit_id,
+                    'gejala_id' => $request->gejala_id,
+
+                ]);
+                return $add;
     }
 
     /**
@@ -36,30 +46,75 @@ class VitalityController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $vitalityexisted = vitality::where('id',$id)->first();
+        if ($vitalityexisted)
+        {
+            return response()->json(array(
+                'message'   => 'status: ',
+                'status'    => 'success',
+                'code'      => 200,
+                'Data'      => $vitalityexisted,
+            ));
+        }
+        return response()->json(array(
+            'message'       =>'Status:',
+            'status'        =>'not found',
+            'code'          => 404,
+        ));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $vitalityexisted = vitality::where('id',$id)->first();
+                if($vitalityexisted)
+                {
+                    $vitalityexisted -> update([
+                    'obatvitamin_id' => $request -> obatvitamin_id ?? $vitalityexisted -> obatvitamin_id,
+                    'penyakit_id' => $request -> penyakit_id ?? $vitalityexisted -> penyakit_id,
+                    'gejala_id' => $request -> gejala_id ?? $vitalityexisted -> gejala_id,
+
+
+                ]);
+                    return response()->json(array(
+                    [   'success' => true,
+                        'message' => 'vitality berhasil di update',
+                        'code'    => 200,
+                        'data'    => $vitalityexisted,
+                    ]));
+                }
+                return response()->json(array(
+                    [   'success'   => false,
+                        'message'   => 'vitality tidak tersedia',
+                        'code'      => 404,
+                ]));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+                /**
+                 * Remove the specified resource from storage.
+                 */
+                public function destroy(string $id)
+                {
+                    $vitalityexisted = vitality::where('id',$id)->first();
+                    if($vitalityexisted)
+                    {
+                        $vitalityexisted->delete();
+                        return response()->json(array(
+                            [
+                                'success' => true,
+                                    'message' => 'vitality berhasil di hapus',
+                                    'code'    => 200,
+                                    'data'    => $vitalityexisted,
+                            ]
+                            ));
+                    }
+                return response()->json(array( [
+                        'success'   => false,
+                                    'message'   => 'vitality tidak tersedia',
+                                    'code'      => 404,
+                ]));
+                }
 }
