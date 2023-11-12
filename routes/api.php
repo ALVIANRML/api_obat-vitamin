@@ -23,14 +23,16 @@ use App\Http\Controllers\Vitality\VitalityController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-
-Route::apiResource('umur', \App\Http\Controllers\Umur\UmurController::class);
+Route::post('register',[AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
 Route::apiResource('gejala', \App\Http\Controllers\Gejala\GejalaController::class);
 Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
-Route::get('bronkritis',[VitalityController::class,'bronkritis']);
 
+Route::middleware(['auth:api'])->group(function () {
+
+    Route::post('logout', [AuthController::class, 'logout']);
+});
 
 
 // Route::middleware(['auth:api'])->group(function()

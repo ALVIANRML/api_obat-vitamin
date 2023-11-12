@@ -28,14 +28,13 @@ class VitalityController extends Controller
             [
                 'obatvitamin_id'    =>'required',
                 'penyakit_id'       =>'required',
-                'gejala_id'         =>'required',
 
             ]);
             $add = vitality::create(
                 [
                     'obatvitamin_id'      => $request->obatvitamin_id,
                     'penyakit_id'      => $request->penyakit_id,
-                    'gejala_id' => $request->gejala_id,
+                    
 
                 ]);
                 return $add;
@@ -75,7 +74,6 @@ class VitalityController extends Controller
                     $vitalityexisted -> update([
                     'obatvitamin_id' => $request -> obatvitamin_id ?? $vitalityexisted -> obatvitamin_id,
                     'penyakit_id' => $request -> penyakit_id ?? $vitalityexisted -> penyakit_id,
-                    'gejala_id' => $request -> gejala_id ?? $vitalityexisted -> gejala_id,
 
 
                 ]);

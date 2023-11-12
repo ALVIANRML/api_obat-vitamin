@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('vitality', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('obatvitamin_id')->nullable();
             $table->uuid('penyakit_id')->nullable();
-            $table->uuid('gejala_id')->nullable();
+            $table->uuid('obatvitamin_id')->nullable();
             $table->timestamps();
 
             $table->foreign('obatvitamin_id')
@@ -30,11 +29,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->foreign('gejala_id')
-                ->references('id')
-                ->on('gejala')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+
         });
     }
 
