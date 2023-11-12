@@ -17,6 +17,7 @@ class obatvitamin extends Model
         'deskripsi',
         'obat_anak',
         'obat_dewasa',
+        'harga',
     ];
     public function vitality()
     {

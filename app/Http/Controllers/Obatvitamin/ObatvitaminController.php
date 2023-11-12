@@ -31,6 +31,7 @@ class ObatvitaminController extends Controller
                 'deskripsi'     =>'required',
                 'obat_dewasa'     =>'required',
                 'obat_anak' =>'required',
+                'harga' =>'required',
 
                 ]);
             $add = obatvitamin::create(
@@ -39,6 +40,7 @@ class ObatvitaminController extends Controller
                     'deskripsi' => $request->deskripsi,
                     'obat_dewasa'   => $request->obat_dewasa,
                     'obat_anak'      => $request->obat_anak,
+                    'harga'      => $request->harga,
 
                 ]);
                 return $add;
@@ -79,7 +81,7 @@ class ObatvitaminController extends Controller
                     'nama' => $request -> nama ?? $obatvitaminexisted -> nama,
                     'deskripsi' => $request -> deskripsi ?? $obatvitaminexisted -> deskripsi,
                     'obat_dewasa' => $request -> obat_dewasa ?? $obatvitaminexisted -> obat_dewasa,
-                    'obat_anak' => $request -> obat_anak ?? $obatvitaminexisted -> obat_anak,
+                    'harga' => $request -> harga ?? $obatvitaminexisted -> harga,
 
                 ]);
                     return response()->json(array(

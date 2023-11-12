@@ -17,6 +17,7 @@ class penyakit extends Model
         'nama',
         'penyebab',
         'pengobatan',
+        'gejala',
 ];
 public function vitality()
     {

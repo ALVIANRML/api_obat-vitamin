@@ -19,11 +19,12 @@ class PenyakitResource extends JsonResource
         // return parent::toArray($request);
 
         return[
-        'id'        => $this->id,
-        'id_penyakit'=> $this->id_penyakit,
-        'nama'  => $this->nama,
-        'penyebab'  => $this->penyebab,
-        'pengobatan' => $this->pengobatan,
+        'id'            => $this->id,
+        'id_penyakit'   => $this->id_penyakit,
+        'nama'          => $this->nama,
+        'gejala'        => $this->gejala,
+        'penyebab'      => $this->penyebab,
+        'pengobatan'    => $this->pengobatan,
 
 
         ];

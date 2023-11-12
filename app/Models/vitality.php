@@ -14,7 +14,7 @@ class vitality extends Model
     [
         'obatvitamin_id',
         'penyakit_id',
-        'gejala_id'
+      
     ];
     public function obatvitamin()
     {

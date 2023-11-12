@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('penyakits', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('id_penyakit')->nullable();
+            $table->string('id_penyakit')->nullable()->unique();
             $table->string('nama')->nullable();
             $table->text('penyebab')->nullable();
+            $table->text('gejala')->nullable();
             $table->text('pengobatan')->nullable();
             $table->timestamps();
         });

@@ -27,6 +27,7 @@ class PenyakitController extends Controller
                 'nama'          =>'required',
                 'penyebab'     =>'required',
                 'pengobatan'     =>'required',
+                'gejala'     =>'required',
 
             ]);
             $add = penyakit::create(
@@ -35,6 +36,7 @@ class PenyakitController extends Controller
                     'nama'      => $request->nama,
                     'penyebab' => $request->penyebab,
                     'pengobatan'      => $request->pengobatan,
+                    'gejala'      => $request->gejala,
                 ]);
                 return $add;
     }
@@ -75,6 +77,8 @@ class PenyakitController extends Controller
                     'id_penyakit' => $request -> id_penyakit ?? $penyakitexisted -> id_penyakit,
                     'penyebab' => $request -> penyebab ?? $penyakitexisted -> penyebab,
                     'pengobatan' => $request -> pengobatan ?? $penyakitexisted -> pengobatan,
+                    'gejala' => $request -> gejala ?? $penyakitexisted -> gejala,
+
 
 
                 ]);
