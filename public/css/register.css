@@ -1,0 +1,41 @@
+body{
+    background-image: url('/gambar/background pict fix.png');
+    background-size: cover;
+}
+
+.container {
+    display: flex; /* Untuk menggunakan display flex */
+    justify-content: center; /* Untuk meletakkan di tengah secara horizontal */
+    align-items: center; /* Untuk meletakkan di tengah secara vertikal */
+    height: 100vh; /* Sesuaikan dengan ketinggian viewport */
+}
+.kotak {
+    width: 376px; /* Atur lebar kotak */
+    height: 495px; /* Atur tinggi kotak */
+    background-color: #5B073B; /* Warna latar belakang */
+    box-shadow: 0px 4px 80px 0px #290F28;
+    border-radius: 20px;
+  }
+.gambar{
+    padding-left: 120px;
+}
+.kolom{
+    width: 250px; /* Atur lebar kotak */
+    height: 40px; /* Atur tinggi kotak */
+    /* background-color:#fff; Warna latar belakang */
+    margin-left:64px;
+    border-radius: 10px;
+}
+.mt-40{
+    margin-top: 40px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+.tombol{
+    padding-left: 110px;
+}

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vitality', function (Blueprint $table) {
+        Schema::create('vitalities', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('penyakit_id')->nullable();
             $table->uuid('obatvitamin_id')->nullable();

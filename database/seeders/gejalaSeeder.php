@@ -109,7 +109,7 @@ class gejalaSeeder extends Seeder
         ],
         [
           'id' =>  '8a817dec-7e11-11ee-b962-0242ac120002',
-            'id_gejala'=> 'G13',
+            'id_gejala'=> 'G    ',
           'nama'=> 'diare',
            'created_at' => '2023-11-7 10:00:00',
            'updated_at' =>'2023-11-7 10:00:00',

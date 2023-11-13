@@ -12,6 +12,7 @@ use App\Http\Controllers\Gejala\GejalaController;
 use App\Http\Controllers\Obatvitamin\Dosis_obatController;
 use App\Http\Controllers\Obatvitamin\ObatvitaminController;
 use App\Http\Controllers\Vitality\VitalityController;
+use App\Models\vitality;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::apiResource('gejala', \App\Http\Controllers\Gejala\GejalaController::class);
 Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
-
+Route::apiResource('vitality', \App\Http\Controllers\Vitality\VitalityController::class);
 Route::middleware(['auth:api'])->group(function () {
 
     Route::post('logout', [AuthController::class, 'logout']);
