@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('maps', function () {
             return view('maps');
         });
-Route::post('register',[\app\Http\Controllers\Auth\AuthController::class, 'register']);
-Route::post('login', [\app\Http\Controllers\Auth\AuthController::class, 'login']);
-// Route::apiResource('umur', \App\Http\Controllers\Umur\UmurController::class);
+
+Route::get('register', function () {
+            return view('login,logout,register/register');
+        });
+
+        Route::get('login', function () {
+            return view('login,logout,register/login');
+        });
+
+
+Route::post('register',[AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
 Route::apiResource('gejala', \App\Http\Controllers\Gejala\GejalaController::class);
 Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);

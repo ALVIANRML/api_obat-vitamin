@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class vitality extends Model
 {
     use HasFactory, HasUuids;
-    protected $primarykey = 'vitality';
+    protected $primarykey = 'vitalities';
     protected $fillable =
     [
         'obatvitamin_id',
         'penyakit_id',
-      
+
     ];
     public function obatvitamin()
     {
@@ -24,8 +24,5 @@ class vitality extends Model
     {
         return $this->hasMany(penyakit::class, 'penyakit_id');
     }
-    public function gejala()
-    {
-        return $this->hasMany(gejala::class, 'gejala_id');
-    }
+    
 }

@@ -20,7 +20,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(),[
             'name'      => 'required',
             'email'     => 'required|email',
-            'password'  => 'required|min:5',
+            'password'  => 'required|min:3',
         ]);
         if($validator->fails())
         {
@@ -31,7 +31,8 @@ class AuthController extends Controller
                 'data'      => $validator->fails(),
                 'code'      => 433,
             ]
-            );
+        );
+
         }
         $user = User::create([
             'name'      => $request->name,

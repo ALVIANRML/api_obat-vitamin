@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('deskripsi')->nullable();
             $table->string('obat_dewasa')->nullable();
             $table->string('obat_anak')->nullable();
+            $table->integer('harga')->nullable();
             $table->timestamps();
 
 

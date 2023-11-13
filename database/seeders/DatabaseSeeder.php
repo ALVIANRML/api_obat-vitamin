@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         {
             $this->call([
-                gejalaSeeder::class,
-                    // PenyakitSeeder::class,
+                // gejalaSeeder::class,
+                    PenyakitSeeder::class,
                     // ObatvitaminSeeder::class,
 
         ]);
