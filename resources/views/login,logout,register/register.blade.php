@@ -23,7 +23,7 @@ input[type="submit"]
 {
     background-color: #C82840;
     color: white;
-    align-items: center;
+    margin-left: 20px;
     width: 150px;
     height: 50px;
     border-radius: 20px;
@@ -36,30 +36,51 @@ input[type="submit"]
     <div class="container">
         <div class="kotak">
             <div class="gambar mt-40">
+
                 <img src="/gambar/logo pemweb (1).png"widht="120px" height="120px"  alt="logo vitality">
             </div>
             <form action="register" method = "post">
                 @csrf
             <div class="kolom mt-40" >
-                <input type="text" name="name" placeholder="Nama">
+                <input type="text"  name="name" class="form-control @error('name')
+                is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('name') }}">
                 @error('name')
-        <div class="error-message">{{ $message }}</div>
-    @enderror
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+
+        {{-- <div class="error-message">{{ $message }}</div> --}}
+
             </div>
             <div class="kolom mt-20" >
-                <input type="email" name="email" placeholder="Email">
+                <input type="email" name="email" class="form-control @error('email')
+                is-invalid @enderror" id="email"  placeholder="Email" required value="{{ old('email') }}">
                 @error('email')
-                <div class="error-message">{{ $message }}</div>
-            @enderror
-            </div>
-            <div class="kolom mt-20" >
-                <input type="password" name="password" placeholder="Kata Sandi">
+                <div class="invalid-feedback">
+                   {{$message}}
+                </div>
+                @enderror
             </div>
 
-            <div class="tombol mt-50">
+            <div class="kolom mt-20" >
+                <input type="password"  name="password"  class="form-control
+                @error('password')
+                is-invalid @enderror" id="password"   placeholder="Kata Sandi" required>
+                @error('password')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+
+            <div class="tombol mt-40">
                 <input type="submit" value="Submit">
             </div>
         </form>
+        <div class="center-button">
+            <p>Sudah punya akun?<br><a href="login">silahkan login</p>
+        </div>
         </div>
     </div>
 

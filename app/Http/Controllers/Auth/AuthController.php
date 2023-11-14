@@ -15,106 +15,39 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    public function register(Request $request)
+    public function storeregister(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'name'      => 'required',
-            'email'     => 'required|email',
+        $validatedData = $request->validate([
+            'name'      => 'required|max:100',
+            'email'     => 'required|email:dns|unique:users',
             'password'  => 'required|min:3',
         ]);
-        if($validator->fails())
-        {
-            return response()->json(
-            [
-                'message'   => 'ada kesalahan',
-                'success'    => false,
-                'data'      => $validator->fails(),
-                'code'      => 433,
-            ]
-        );
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        // $validatedData['password'] = Hash::make($validatedData('password'));
+        User::create($validatedData);
 
-        }
-        $user = User::create([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'password'  => $request->password,bcrypt($request->password),
+        // $request->session()->flash('success', 'Registrasi berhasil. Silahkan login');
+        return redirect('login')->with('success', 'Registrasi berhasil. Silahkan login');
+
+        return redirect('/login');
+
+    }
+
+
+
+    public function authenticate(Request $request)
+    {
+        $credential = $request->validate([
+            'email' =>'required|email:dns',
+            'password'=>'required',
         ]);
-
-        if($user)
-        {
-            return response()->json(
-            [
-                'message'           => 'Registrasi berhasil',
-                'success'           => true,
-                'code'              => 200,
-                'data registrasi'   =>$user
-            ],201 );
+        if(Auth::attempt($credential)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard');
         }
-            return response()->json(
-                ['message'   => 'Registrasi gagal',
-                'success'   => false,
-                'code'      => 409]
-            );
+        return back()->with('loginError', 'Periksa kembali email atau password anda!');
+
     }
-
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email'      => 'required',
-            'password'  => 'required',
-        ]);
-
-        $user = User::where('email', $request->email)->first();
-        if (!$user)
-        {
-            return response()->json(
-                [
-                    'success'    => false,
-                    'message'   => 'Pengguna tidak ditemukan',
-                    'code'      => 404
-                ]);
-        }
-        if (Hash::check($request->password, $user->password))
-        {
-            $token = $user ->createToken($user->id)->accessToken;
-                return response()->json(
-                    [
-                        'success'    => true,
-                        'message'   =>
-                        [
-                            'user'      => $user,
-                            'token'     => $token
-                        ]
-                    ]);
-        }
-            else
-            {
-                return response()->json(
-                    [
-                        'message'   => 'Password atau email salah',
-                        'success'   => false,
-                        'status'    => 'not found',
-                        'code'      => 404
-                    ]);
-            }
-    }
-
-    public function logout(Request $request)
-    {
-        $request->user()->token()->delete();
-        return response()->json(array(
-
-            'message' => 'berhasil logout',
-            'status success' => 'success',
-            'code'  => 200
-
-        ));
-    }
-    public function me(Request $request)
-    {
-        return response()->json(Auth::user());
-    }
-
 }
 
 

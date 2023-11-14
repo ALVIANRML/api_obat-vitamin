@@ -26,8 +26,8 @@ Route::get('register', function () {
         });
 
 
-Route::post('register',[AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
+Route::post('register',[AuthController::class, 'storeregister']);
+Route::post('login', [AuthController::class, 'authenticate']);
 Route::apiResource('gejala', \App\Http\Controllers\Gejala\GejalaController::class);
 Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
