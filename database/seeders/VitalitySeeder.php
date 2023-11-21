@@ -15,10 +15,22 @@ class VitalitySeeder extends Seeder
     {
         DB::table('vitalities')->insert([
 
-        [
+        [//paracetamol
             'id' => 'c6a4f3a0-8454-11ee-b962-0242ac120002',
-            'obatvitamin_id'   => ''
-        ]
+            'obatvitamin_id'    => 'b9ec6a3a-7f63-11ee-b962-0242ac120002',
+            'penyakit_id'       => '2e4e82f4-814f-11ee-b962-0242ac120002',
+        ],
+        [
+            'id' => '34ca2878-886a-11ee-b9d1-0242ac120002',
+            'obatvitamin'   =>'b9ec6f08-7f63-11ee-b962-0242ac120002',
+            'penyakit_id'       => '2e4e82f4-814f-11ee-b962-0242ac120002',
+
+        ],
+        [
+            'id' => '34ca2a94-886a-11ee-b9d1-0242ac120002',
+            'obatvitamin'   =>'b9ec7048-7f63-11ee-b962-0242ac120002',
+            'penyakit_id'       => '2e4e82f4-814f-11ee-b962-0242ac120002',
+        ],
         ]);
     }
 }

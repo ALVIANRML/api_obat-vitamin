@@ -48,7 +48,7 @@
     </div>
     </a>
     <!-- Kotak 3 -->
-    <a style="text-decoration:none" href="/pembelian">
+    <a style="text-decoration:none" href="/vitality">
     <div class="jual1">
         <img class="gbr-jual" src="gambar/jual.png" alt="jual">
         <p class="teks-jual">

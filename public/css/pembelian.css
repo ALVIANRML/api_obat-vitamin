@@ -182,8 +182,8 @@ hr.fancy {
   }
 
   .box {
-    width: 100%; /* Mengisi lebar kolom */
-    height: 310px;
+    width: 200px; /* Mengisi lebar kolom */
+    height: 250px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -191,20 +191,30 @@ hr.fancy {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 45px;
     margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
   }
 
   .picture {
     height: 150px;
     width: 90%;
-    margin-top: -134px;
-    background-color:#92183D;
+    margin-top: -80px;
+    /* background-color:#92183D; */
     border-radius: 7px;
+
+
   }
+  .picture img{
+
+    max-width: 100%;
+    height: 100PX;
+    display: block; /* Mencegah adanya margin bawah pada gambar */
+    margin: auto;   /* Memberikan efek centering */
+}
   .beli {
     height: 30px;
     width: 70%;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 15%;
     align-items: center;
     text-align: center;
@@ -218,9 +228,10 @@ hr.fancy {
   }
 
   .teks {
-    margin-top: 170px;
+    margin-top: 17px;
     text-align: center;
     font-size: 13px;
+    color: #333;
   }
 
   .teks1 {

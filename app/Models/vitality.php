@@ -18,11 +18,11 @@ class vitality extends Model
     ];
     public function obatvitamin()
     {
-        return $this->hasmany(obatvitamin::class, 'obatvitamin_id');
+        return $this->belongsTo(obatvitamin::class, 'obatvitamin_id');
     }
     public function penyakit()
     {
         return $this->hasMany(penyakit::class, 'penyakit_id');
     }
-    
+
 }

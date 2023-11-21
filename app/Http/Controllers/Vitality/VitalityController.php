@@ -14,9 +14,9 @@ class VitalityController extends Controller
      */
     public function index()
     {
-        $vitality = vitality::all();
-        return VitalityResource::collection($vitality);
-        return view('pembelian.blade',`compact('vitality')`);
+        $vitality = vitality::get();
+        // return ObatvitaminResource::collection($obat_vitamin);
+        return view('menu.pembelian', ['vitality'=> VitalityResource::collection($vitality)]);
     }
 
 

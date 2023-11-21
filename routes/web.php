@@ -60,10 +60,10 @@ Route::get('/menu', function () {
 
     //  Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 
-    Route::get('/pembelian', function () {
+    Route::get('/vitality', function () {
         return view('menu/pembelian');
     });
-    Route::get('/pembelian', [VitalityController::class,'index']);
+    Route::get('/vitality', [VitalityController::class,'index']);
 
 
 //harus membawa token
