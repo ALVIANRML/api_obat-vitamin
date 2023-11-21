@@ -1,0 +1,226 @@
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Gaya CSS untuk layar berlebar kurang dari 600px */
+  }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #FFF5EF;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    top: 250px;
+    left: 60px;
+    position: absolute;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr); /* Empat kolom dengan lebar fleksibel */
+    gap: 2px; /* Jarak antar kolom */
+  }
+
+  .responsive-image {
+    max-width: 100%;
+height: auto;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(254, 221, 200, 0.8);
+    padding: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu {
+    justify-content:left;
+    left: 580%;
+    position: relative;
+}
+
+.text{
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #C1273C;
+    top: 80px;
+    position: relative;
+}
+
+.text2{
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 20px;
+    color: #47020c;
+    top: 90px;
+    position: relative;
+}
+  .penyakit1 {
+    background-color: #5A073B;
+    border-radius: 50px 8px 50px 8px;
+    width: 75%; /* Mengisi lebar kolom */
+    height: 305px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-bottom: 5px; /* Jarak antar kotak dalam satu kolom */
+}
+
+.gbr-penyakit {
+    left: 10px;
+    top: 25px;
+    height: 200px;
+    position: relative;
+}
+
+.teks-penyakit {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #ffffff  ;
+    padding: 10px;
+    top: 230px;
+    right: 140px;
+    position: relative;
+    text-align: center;
+}
+
+.penyakit1:hover{
+    background-color: #7D3462;
+}
+
+.deskripsi1 {
+    background-color: #C1273C;
+    border-radius: 50px 8px 50px 8px;
+    width: 75%; /* Mengisi lebar kolom */
+    height: 305px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
+}
+
+.gbr-deskripsi {
+    top: 20px;
+    height: 200px;
+    position: relative;
+}
+
+.teks-deskripsi {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #ffffff  ;
+    padding: 10px;
+    top: 220px;
+    right: 140px;
+    position: relative;
+}
+
+  .deskripsi1:hover{
+      background-color: #E08693;
+  }
+
+  .jual1 {
+      background-color: #B35366;
+    border-radius: 50px 8px 50px 8px;
+    width: 75%; /* Mengisi lebar kolom */
+    height: 305px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
+  }
+
+  .gbr-jual {
+      left: 20px;
+      height: 230px;
+      position: relative;
+  }
+
+  .teks-jual {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color: #ffffff  ;
+      text-align: center;
+      padding: 10px;
+      top: 200px;
+      right: 155px;
+      position: relative;
+  }
+
+  .jual1:hover {
+      background-color: #CE8896;
+  }
+  .rumahsakit1 {
+      background-color: #D85E69;
+    border-radius: 50px 8px 50px 8px;
+    width: 75%; /* Mengisi lebar kolom */
+    height: 305px  ;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
+
+  }
+
+  .gbr-rumahsakit {
+      height: 200px;
+      left: 12px;
+      top  : 15px;
+      position: relative;
+  }
+
+  .teks-rumahsakit {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+      padding: 10px;
+      top: 200px;
+      right: 140px;
+      position: relative;
+  }
+
+  .rumahsakit1:hover{
+      background-color: #EAA0A6;
+  }
+

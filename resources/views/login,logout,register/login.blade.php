@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
-input[type="text"],
-input[type="password"],
-input[type="email"]
- {
-      border-radius: 5px;
-      width: 250px;
-    height: 40px;
-    background-color:#fff;
-    border-radius: 10px;}
+        input[type="text"],
+        input[type="password"],
+        input[type="email"]
+            {
+                border-radius: 5px;
+                width: 250px;
+                height: 40px;
+                background-color:#fff;
+                border-radius: 10px;
+            }
 
-input[type="submit"]
-{
-    background-color: #C82840;
-    color: white;
-    align-items: center;
-    width: 150px;
-    height: 50px;
-    border-radius: 20px;
-}
+        input[type="submit"]
+            {
+                background-color: #C82840;
+                color: white;
+                margin-left: 20px;
+                width: 150px;
+                height: 50px;
+                border-radius: 20px;
+            }
 
     </style>
 </head>
@@ -35,30 +36,33 @@ input[type="submit"]
 
     <div class="container">
         <div class="kotak">
-        @if(session()->has('success'))
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            </button>
-        </div>
-    @endif
+            {{-- registrasi berhasil --}}
+            @if(session()->has('success'))
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+            @endif
 
-                    @if(session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('loginError') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        </button>
-                    </div>
-                @endif
+    {{-- Email atau password salah --}}
+            @if(session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+            @endif
+
+            {{-- logo --}}
             <div class="gambar mt-40">
-                <img src="/gambar/logo pemweb (1).png"widht="120px" height="120px"  alt="logo vitality">
+                <img src="/gambar/logo pemweb.png"widht="120px" height="120px"  alt="logo vitality">
             </div>
             <form action="login" method = "post">
                 @csrf
-
             <div class="kolom mt-50" >
                 <input type="email" name="email" class="form-control @error('email')
-                is-invalid @enderror" id="email" placeholder="Email" autofocus required value="{{ old('email') }}">
+                is-invalid @enderror" id="email" autocomplete="email" placeholder="Email" autofocus required value="{{ old('email') }}">
                 @error('email')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -66,7 +70,7 @@ input[type="submit"]
                 @enderror
             </div>
             <div class="kolom mt-40" >
-                <input type="password" name="password"
+                <input type="password" name="password" autocomplete="password"
                  class="form-control
                 @error('password')
                 is-invalid"

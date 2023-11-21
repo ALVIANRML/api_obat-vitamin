@@ -71,7 +71,6 @@ body {
     left: 580%;
     position: relative;
 }
-
 ol, ul {
 	list-style: none;
 }
@@ -143,7 +142,6 @@ table {
     text-align: center;
     font-weight: bold;
 }
-
 hr {
     border: none;
     height: 2px;
@@ -173,17 +171,19 @@ hr.fancy {
   .container {
     display: flex;
     flex-wrap: wrap;
+    top: 0px;
     position: relative;
     gap: 10px; /* Jarak antar kolom */
   }
+
 
   .column {
     flex: 1; /* Merespons secara fleksibel, sehingga akan ada lima kolom */
   }
 
   .box {
-    width: 200px; /* Mengisi lebar kolom */
-    height: 230px;
+    width: 100%; /* Mengisi lebar kolom */
+    height: 310px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -191,23 +191,40 @@ hr.fancy {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 45px;
     margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
   }
 
   .picture {
     height: 150px;
     width: 90%;
-    margin-top: -60px;
+    margin-top: -134px;
     background-color:#92183D;
     border-radius: 7px;
   }
-  .button{
-    width:10px;
+  .beli {
+    height: 30px;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 15%;
+    align-items: center;
+    text-align: center;
+    background-color:#92183D;
+    color: #fff;
+    transition: 0.3s ;
+  }
+
+  .beli:hover{
+    background-color:  #D85E69;
   }
 
   .teks {
     margin-top: 170px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .teks1 {
+    margin-top: 250px;
     text-align: center;
     font-size: 13px;
   }
