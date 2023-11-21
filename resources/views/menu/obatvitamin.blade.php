@@ -37,16 +37,18 @@
                 <div class="row">
                     @foreach ($obatvitamin as $index => $obatvitamins)
                         <div class="col-md-4">
-                            
+
                             <div class="box">
                                 <div class="picture">
+                                    <img src={{ $obatvitamins->gambar }} alt="">
                                     <p class="teks">{{ $obatvitamins->nama }}</p>
+                                    <div class="beli">Detail</div>
                                 </div>
                             </div>
 
                         </div>
 
-                        @if (($index + 1) % 3 == 0)
+                        @if (($index + 1) % 1 == 0)
                             </div>
                             <div class="row">
                         @endif
@@ -56,6 +58,6 @@
 
 
 
-    </div>
+
 </body>
 </html>

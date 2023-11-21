@@ -199,15 +199,39 @@ hr.fancy {
     height: 150px;
     width: 90%;
     margin-top: -60px;
-    background-color:#92183D;
+    /* background-color:#92183D; */
     border-radius: 7px;
+  }
+  .picture img{
+    max-width: 100%;
+    height: 100PX;
+    display: block; /* Mencegah adanya margin bawah pada gambar */
+    margin: auto;   /* Memberikan efek centering */
   }
   .button{
     width:10px;
   }
 
   .teks {
-    margin-top: 170px;
+    margin-top: 30px;
     text-align: center;
     font-size: 13px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  .beli {
+    height: 27px;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 15%;
+    align-items: center;
+    text-align: center;
+    background-color:#92183D;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.3s ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+  .beli:hover{
+    background-color:  #D85E69;
   }
