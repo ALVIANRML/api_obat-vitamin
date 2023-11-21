@@ -1,0 +1,182 @@
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Gaya CSS untuk layar berlebar kurang dari 600px */
+  }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
+}
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #290F28;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    top: 180px;
+    left: 60px;
+    position: absolute;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr); /* Empat kolom dengan lebar fleksibel */
+    gap: 2px; /* Jarak antar kolom */
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.background {
+    background-size: cover;
+    padding: 138px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(254, 221, 200, 0.8);
+    padding: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+.menu {
+    justify-content:left;
+    left: 580%;
+    position: relative;
+}
+.box {
+    background-color: #5B073B;
+    border-radius: 20px;
+    height: 555px;
+    width: 350px;
+    position: flex;
+    box-shadow: 30px 60px 80px rgba(0, 0, 0, 0.5);
+    margin-left: 30%;
+    text-align: center;
+    align-items: center;
+    padding: 10px 70px 60px 50px;
+    max-width: 300px;
+  }
+  #age-input {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 300px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: 'Poppins';
+    font-size: 15px;
+  }
+  label:hover{
+    background-color: #92183D;
+    color: #ffffff;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: #92183D;
+    color: #ffffff;
+  }
+
+  #submit-btn {
+    margin-top: 90px;
+    position: relative;
+    padding: 10px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Dela Gothic One';
+    background-color: #F9815C;
+    border: 1px solid #F9815C;
+    border-radius: 20px;
+    display: block;
+  }
+
+  #submit-btn:hover{
+    background-color: #FF583E;
+  }
+
+  #error-message {
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    font-family: 'Poppins';
+    font-size: 13px;
+  }
+
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+.teks3 {
+    color: #ffffff;
+    text-align: center;
+    font-family:'Poppins';
+    font-size: 20px;
+    font-weight: bold;
+    left: 0;
+    top: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.box1 {
+    background-color: #290F28;
+    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    position: relative;
+    top: 8cm;
+    left: 400px;
+    text-align: center;
+    padding: 10px 70px 60px 50px;
+    max-width: 300px;
+  }

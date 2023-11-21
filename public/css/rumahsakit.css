@@ -1,0 +1,279 @@
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Gaya CSS untuk layar berlebar kurang dari 600px */
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: ("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #FFF5EF;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    background-color: #feddc8cc;
+    padding: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu {
+    justify-content:left;
+    left: 580%;
+    position: relative;
+}
+.text {
+    font-size: 40px;
+    font-family: 'Dela Gothic One';
+    color: #5A073B;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+.text2 {
+    font-size: 30px;
+    font-family: 'Poppins';
+    color: #5A073B;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 120px;
+}
+
+/*
+form {
+    background-color: #FFF5EF;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    top: 130px;
+    left: 140px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+  }
+*/
+
+  button {
+    background-color: #C1272D;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #D85E69;
+  }
+
+  /*
+  .search-container {
+    position: relative;
+  }
+
+  #searchInput {
+    width: 350%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 180px;
+    margin-bottom: -45px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #searchInput:focus {
+    border-color: #5A073B;
+    box-shadow: 0 0 5px #5A073B;
+  }
+
+  #searchButton {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  #searchButton:hover {
+    background-color: #5A073B;
+  }
+  */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: -10%;
+    position: relative;
+  }
+
+  .column {
+    flex: 1; /* Merespons secara fleksibel, sehingga akan ada dua kolom */
+  }
+
+  .box {
+    font-family: 'Poppins';
+    width: 100%; /* Mengisi lebar kolom */
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .picture {
+    height: 150px;
+    width: 40%;
+    margin-right: 0%;
+    background-color:#92183D;
+    border-radius: 7px 0 0 7px ;
+  }
+
+  .picture2 {
+    height: 150px;
+    width: 70%;
+    margin-left: 0%;
+    background-color:#ffffff;
+    border-radius: 0 7px 7px 0 ;
+  }
+
+  .text1 {
+    margin-right: 100%;
+    text-align: center;
+    top: 35%;
+    left: 40%;
+    position: relative;
+    font-size: 13px;
+    font-family: 'Poppins';
+    color: #000000;
+  }
+
+
+.container1 {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.location-container{
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 1cm;
+    display: flex;
+    align-items: center;
+}
+
+  /* Gaya untuk input pencarian */
+.search-input {
+    padding: 18px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-top: 50%;
+}
+
+  /* Gaya untuk tombol pencarian */
+  .search-button {
+    justify-content: center;
+    padding: 20px;
+    background-color: #C82840;
+    color: white;
+    border: 1px solid #C82840;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-top: 50%;
+  }
+
+  .locationBtn {
+    justify-content: center;
+    padding: 20px;
+    background-color: #C82840;
+    color: white;
+    border: 1px solid #C82840;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    margin-top: 173%;
+  }
+  /* Gaya hover untuk tombol pencarian */
+  .search-button:hover {
+    background-color: #92183D;
+  }
+
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #333; /* Warna garis */
+    margin: 160px 110px; /* Jarak dari elemen di sekitarnya */
+}
+
+/* Atau, Anda juga dapat memberikan efek bayangan atau margin agar lebih menarik */
+hr.fancy {
+    border: none;
+    height: 5px;
+    background: linear-gradient(to right, #5a073b, #FFE7D4 , #5a073b); /* Gradien warna */
+    box-shadow: 0 5px 5px -5px #333; /* Efek bayangan */
+}

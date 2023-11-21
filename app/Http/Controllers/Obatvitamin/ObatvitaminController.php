@@ -15,8 +15,9 @@ class ObatvitaminController extends Controller
      */
     public function index()
     {
-        $obat_vitamin = obatvitamin::get();
-        return ObatvitaminResource::collection($obat_vitamin);
+        $obatvitamin = obatvitamin::get();
+        // return ObatvitaminResource::collection($obat_vitamin);
+        return view('menu.obatvitamin', ['obatvitamin'=> ObatvitaminResource::collection($obatvitamin)]);
     }
 
 

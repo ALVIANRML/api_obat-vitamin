@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Penyakit\PenyakitController;
+use App\Http\Controllers\Vitality\VitalityController;
+use App\Models\penyakit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,31 +16,64 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('maps', function () {
-            return view('maps');
-        });
-
+//register
 Route::get('register', function () {
             return view('login,logout,register/register');
         });
+Route::post('register',[AuthController::class, 'storeregister']);
 
+//login
         Route::get('login', function () {
             return view('login,logout,register/login');
         });
 
 
-Route::post('register',[AuthController::class, 'storeregister']);
-Route::post('login', [AuthController::class, 'authenticate']);
-Route::apiResource('gejala', \App\Http\Controllers\Gejala\GejalaController::class);
-Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
-Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
 
+Route::get('/', function () {
+    return view('home');
+});
+
+
+Route::get('/menu', function () {
+        return view('menu');
+    });
+
+    // obatvitamin
+    Route::get('/obatvitamin', function () {
+        return view('menu/obatvitamin');
+    });
+    Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
+
+    //rumah sakit
+    Route::get('maps', function () {
+                return view('maps');
+            });
+    Route::get('/rumahsakit', function () {
+                return view('menu/rumah_sakit');
+    });
+
+    //penyakit
+    Route::get('/penyakit', function () {
+        return view('menu/penyakit');
+    });
+    Route::get('/penyakit', [PenyakitController::class,'index']);
+
+    //  Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
+
+    Route::get('/pembelian', function () {
+        return view('menu/pembelian');
+    });
+    Route::get('/pembelian', [VitalityController::class,'index']);
+
+
+//harus membawa token
 Route::middleware(['auth:api'])->group(function () {
 
     Route::post('logout', [\app\Http\Controllers\Auth\AuthController::class, 'logout']);
 });
 
+Route::get('/umur', function () {
+        return view('umur');
+    });
 
-// Route::get('obat_dan_vitamin', function () {
-//         return view('vitamin_obat');
-// });
+

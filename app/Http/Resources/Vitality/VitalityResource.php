@@ -24,6 +24,7 @@ class VitalityResource extends JsonResource
         return
         [
             'id'                => $this->id,
+            'id_vitality'       => $this->id_vitality,
             'obatvitamin_id'    => new ObatvitaminResource($obatvitamin),
             'penyakit_id'       => new PenyakitResource($penyakit),
         ];

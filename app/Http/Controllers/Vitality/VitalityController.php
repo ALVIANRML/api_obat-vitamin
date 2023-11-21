@@ -14,8 +14,9 @@ class VitalityController extends Controller
      */
     public function index()
     {
-        $vitality = vitality::get();
+        $vitality = vitality::all();
         return VitalityResource::collection($vitality);
+        return view('pembelian.blade',`compact('vitality')`);
     }
 
 
@@ -26,6 +27,7 @@ class VitalityController extends Controller
     {
         $request -> validate(
             [
+                'id_vitality'       =>'required',
                 'obatvitamin_id'    =>'required',
                 'penyakit_id'       =>'required',
 
@@ -34,7 +36,7 @@ class VitalityController extends Controller
                 [
                     'obatvitamin_id'      => $request->obatvitamin_id,
                     'penyakit_id'      => $request->penyakit_id,
-                    
+
 
                 ]);
                 return $add;

@@ -13,6 +13,7 @@ class PenyakitController extends Controller
     {
         $penyakit = penyakit::get();
         return PenyakitResource::collection($penyakit);
+
     }
 
 

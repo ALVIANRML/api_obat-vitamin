@@ -20,7 +20,7 @@ class PenyakitResource extends JsonResource
 
         return[
         'id'            => $this->id,
-        'id_penyakit'   => $this->id_penyakit,
+        // 'id_penyakit'   => $this->id_penyakit,
         'nama'          => $this->nama,
         'gejala'        => $this->gejala,
         'penyebab'      => $this->penyebab,

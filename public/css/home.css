@@ -1,0 +1,100 @@
+html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+    /* Gaya CSS untuk layar berlebar kurang dari 600px */
+  }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #290F28;
+    align-items: center;
+    justify-content: center;
+  }
+
+.background {
+    background-size: cover;
+    padding: 200px;
+
+}
+
+.teks {
+    color: #ffffff;
+    text-align: center;
+    font-family:'Dela Gothic One';
+    font-size: 140px;
+    text-shadow: 0px 0px 3.5px #ffffff;
+    left: 0;
+    top: -70px;
+    overflow: hidden;
+    position: relative;
+  }
+
+.teks2 {
+    color: #ffffff;
+    text-align: center;
+    font-family:'Poppins';
+    font-style: italic;
+    font-size: 30px;
+    left: 0;
+    top: -85px;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn {
+    background-color: #fb563f;
+    border-radius: 30px;
+    height: 50px;
+    width: 150px;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    font-family: "Dela Gothic One";
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    line-height: normal;
+    top: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #F99A86;
+}
+
+.logo {
+    position: relative;
+    margin-top: -30px  ;
+    margin-right: 20%;
+}

@@ -43,7 +43,7 @@ class AuthController extends Controller
         ]);
         if(Auth::attempt($credential)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/menu');
         }
         return back()->with('loginError', 'Periksa kembali email atau password anda!');
 

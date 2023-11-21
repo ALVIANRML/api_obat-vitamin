@@ -37,7 +37,7 @@ input[type="submit"]
         <div class="kotak">
             <div class="gambar mt-40">
 
-                <img src="/gambar/logo pemweb (1).png"widht="120px" height="120px"  alt="logo vitality">
+                <img src="/gambar/logo pemweb.png"widht="120px" height="120px"  alt="logo vitality">
             </div>
             <form action="register" method = "post">
                 @csrf

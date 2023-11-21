@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('vitalities', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('id_vitality')->nullable();
             $table->uuid('penyakit_id')->nullable();
             $table->uuid('obatvitamin_id')->nullable();
             $table->timestamps();
