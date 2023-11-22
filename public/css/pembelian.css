@@ -219,6 +219,7 @@ hr.fancy {
     align-items: center;
     text-align: center;
     background-color:#92183D;
+    border-radius: 20px;
     color: #fff;
     transition: 0.3s ;
   }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Obatvitamin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Obatvitamin\Obatvitaminharga;
 use App\Http\Resources\Obatvitamin\ObatvitaminResource;
 use App\Models\obatvitamin;
 use Exception;
@@ -15,9 +16,34 @@ class ObatvitaminController extends Controller
      */
     public function index()
     {
+        $obatvitamin = obatvitamin::query(); // Gunakan query() untuk memulai query builder
+
+        if (request()->has('search')) {
+            $obatvitamin->where('nama', 'like', '%' . request()->input('search') . '%');
+        }
+
+        $obatvitaminResults = $obatvitamin->get(); // Ambil hasil query
+
+        return view('menu.obatvitamin', ['obatvitamin' => $obatvitaminResults]);
+    }
+    public function harga()
+    {
+
+        $obatvitamin = obatvitamin::query(); // Gunakan query() untuk memulai query builder
+
+        if (request()->has('search')) {
+            $obatvitamin->where('nama', 'like', '%' . request()->input('search') . '%');
+        }
+
+        $obatvitaminResults = $obatvitamin->get(); // Ambil hasil query
+
+        return view('menu.pembelian', ['obatvitamin' => $obatvitaminResults]);
+    }
+    public function cariobat()
+    {
+
         $obatvitamin = obatvitamin::get();
-        // return ObatvitaminResource::collection($obat_vitamin);
-        return view('menu.obatvitamin', ['obatvitamin'=> ObatvitaminResource::collection($obatvitamin)]);
+
     }
 
 

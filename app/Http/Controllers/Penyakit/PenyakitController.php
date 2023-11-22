@@ -12,8 +12,7 @@ class PenyakitController extends Controller
     public function index()
     {
         $penyakit = penyakit::get();
-        return PenyakitResource::collection($penyakit);
-
+        return view('menu.penyakit', ['penyakit'=> PenyakitResource::collection($penyakit)]);
     }
 
 

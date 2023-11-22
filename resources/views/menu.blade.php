@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="gambar/logo pemweb (1).png">
     <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,900&display=swap" rel="stylesheet">
     <title> Menu • Vitality </title>
@@ -13,13 +14,7 @@
 <body>
 
     <div class="background">
-        <nav class="navbar sticky-top bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand">
-                <img src="gambar/Logo Navbar.png" alt="Vitality" width="135" height="55">
-              </a>
-             <a href="login"> <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45"></a>
-            </nav>
+        @extends('partials.navbar')
 
         <section id="text">
             <p class="text"> Selamat Datang di Vitality!</p>
@@ -66,6 +61,7 @@
     </div>
     </a>
 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </div>
 
     <!-- <a href="http://127.0.0.1:8000/penyakit">

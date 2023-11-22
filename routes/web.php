@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Obatvitamin\ObatvitaminController;
 use App\Http\Controllers\Penyakit\PenyakitController;
 use App\Http\Controllers\Vitality\VitalityController;
+use App\Http\Resources\Obatvitamin\Obatvitaminharga;
 use App\Models\penyakit;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +25,10 @@ Route::get('register', function () {
 Route::post('register',[AuthController::class, 'storeregister']);
 
 //login
-        Route::get('login', function () {
-            return view('login,logout,register/login');
-        });
+Route::get('login', function () {
+    return view('login,logout,register/login');
+})->middleware('guest');
+Route::post('login',[AuthController::class, 'authenticate'])->middleware('guest');
 
 
 
@@ -60,11 +63,12 @@ Route::get('/menu', function () {
 
     //  Route::apiResource('penyakit', \App\Http\Controllers\Penyakit\PenyakitController::class);
 
+    //pembelian
     Route::get('/vitality', function () {
         return view('menu/pembelian');
     });
-    Route::get('/vitality', [VitalityController::class,'index']);
-
+    Route::get('/vitality', [ObatvitaminController::class,'harga']);
+    // Route::get('/vitality', [ObatvitaminController::class,'show']);
 
 //harus membawa token
 Route::middleware(['auth:api'])->group(function () {
@@ -75,5 +79,6 @@ Route::middleware(['auth:api'])->group(function () {
 Route::get('/umur', function () {
         return view('umur');
     });
+
 
 

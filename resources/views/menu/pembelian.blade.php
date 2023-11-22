@@ -11,35 +11,30 @@
 </head>
 <body>
     <div class="background">
-        <nav class="navbar sticky-top bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/menu">
-                    <img src="gambar/Logo Navbar.png" alt="Vitality" width="135" height="55">
-                </a>
-                <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45">
-            </div>
-        </nav>
-
+        @extends('partials.navbar')
         <p class="text">Pembelian Vitamin dan Obat</p>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button type="button" class="search-button"> Search </button>
+            <form action="/vitality" method="GET"> <!-- Tambahkan action dan method -->
+                <input type="text" class="search-input" name="search" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button> <!-- Ganti type menjadi submit -->
+            </form>
         </div>
-    </div>
 
     <p class="text1">Daftar Pembelian <br> Vitamin & Obat</p>
     <hr class="fancy">
 
     <div class="container">
         <div class="row">
-            @foreach ($vitality as $index => $vitalitys)
+            @foreach ($obatvitamin as $index => $vitalitys)
                 <div class="col-md-4">
                     <div class="box">
                         <div class="picture">
-                            <img src={{$vitalitys->obatvitamin->gambar}} alt="">
+                            <img src={{$vitalitys->gambar}} alt="">
                             {{-- <p class="teks">{{ $vitalitys->name }}</p> --}}
-                            <p class="teks">{{ $vitalitys->obatvitamin->nama }}</p>
-                            <div class="beli">beli</div>
+                            <p class="teks">{{ $vitalitys->nama }}
+                                <div class="beli">beli</div>
+                                <p class="teks">Rp.{{ $vitalitys->harga }}</p>
+                            </p>
                         </div>
 <br>
                     </div>
@@ -50,6 +45,7 @@
                 @endif
             @endforeach
         </div>
+    </div>
     </div>
 </body>
 </html>
