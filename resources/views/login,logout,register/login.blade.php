@@ -60,7 +60,7 @@
             </div>
             <form action="login" method = "post">
                 @csrf
-            <div class="kolom mt-50" >
+            <div class="kolom mt-50x" >
                 <input type="email" name="email" class="form-control @error('email')
                 is-invalid @enderror" id="email" autocomplete="email" placeholder="Email" autofocus required value="{{ old('email') }}">
                 @error('email')
@@ -85,6 +85,7 @@
             </div>
 
             <div class="tombol mt-50">
+                <a href="payment" onclick="showPaymentAlert()">
                 <input type="submit" value="Submit">
             </div>
         </form>
@@ -93,6 +94,11 @@
         </div>
         </div>
     </div>
+    <script>
+        function showPaymentAlert() {
+            alert("Anda berhasil login.");
+        }
+    </script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

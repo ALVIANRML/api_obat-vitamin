@@ -24,8 +24,8 @@ class ObatvitaminResource extends JsonResource
         'deskripsi' => $this->deskripsi,
         'obat_dewasa' =>$this->obat_dewasa,
         'obat_anak'=> $this->obat_anak,
-        'harga'=>$this->harga,
         'gambar'=> $this->gambar,
+        'harga'=>$this->harga,
 
 
         ];

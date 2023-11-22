@@ -218,6 +218,11 @@ hr.fancy {
     font-size: 13px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
   }
+  .menu {
+    justify-content:left;
+    left: 580%;
+    position: relative;
+}
   .beli {
     height: 27px;
     width: 70%;

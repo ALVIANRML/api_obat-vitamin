@@ -26,7 +26,8 @@ footer, header, hgroup, menu, nav, section {
 
 @media screen and (max-width: 600px) {
     /* Gaya CSS untuk layar berlebar kurang dari 600px */
-  }
+}
+
 
 @font-face {
     font-family: 'Poppins';
@@ -40,7 +41,8 @@ body {
     background-color: #FFF5EF;
     justify-content: center;
     align-items: center;
-  }
+}
+
 
   .container {
     width: 80%;
@@ -54,13 +56,14 @@ body {
 
   .navbar {
     position: fixed;
+    margin-top: -135px;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     display: flex;
-    background-color: #feddc8cc;
+    background-color: rgb(254, 221, 200, 0.8);
     padding: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
