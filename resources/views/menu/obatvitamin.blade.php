@@ -34,30 +34,43 @@
             <div class="container">
                 <div class="row">
                     @foreach ($obatvitamin as $index => $obatvitamins)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-40" >
 
-                            <div class="box">
+                            <div class="card" onclick="openPopup({{ $index }})">
                                 <div class="picture">
-                                    <img src={{ $obatvitamins->gambar }} alt="">
+                                    <img src="{{ $obatvitamins->gambar }}" alt="">
                                     <p class="teks">{{ $obatvitamins->nama }}</p>
-                                    <div class="beli">Detail</div>
+                                </div>
+                            </div>
+
+                            <div class="popup" id="popup{{ $index + 1 }}">
+                                <div class="content">
+                                    <span class="close" onclick="closePopup({{ $index }})">&times;</span>
+                                    <center><img src="{{ $obatvitamins->gambar }}" alt=""></center>
+                                    <h2><center>{{ $obatvitamins->nama }}</center></h2>
+                                    <p class="keterangan"> Deskripsi Obat: </p>
+                                    <p class="keterangan-isi">{{ $obatvitamins->deskripsi }} <br></p>
+                                    <p class="keterangan"> Dosis Dewasa : </p>
+                                    <p class="keterangan-isi">{{ $obatvitamins->obat_dewasa }} <br></p>
+                                    <p class="keterangan"> Dosis Anak   : </p>
+                                    <p class="keterangan-isi">{{ $obatvitamins->obat_anak }} <br></p>
+
                                 </div>
                             </div>
 
                         </div>
-
-                        @if (($index + 1) % 1 == 0)
-                            </div>
-                            <div class="row">
-                        @endif
                     @endforeach
                 </div>
-
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+            <script>
+                function openPopup(index) {
+                    document.getElementById(`popup${index + 1}`).style.display = "block";
+                }
 
-
-
+                function closePopup(index) {
+                    document.getElementById(`popup${index + 1}`).style.display = "none";
+                }
+            </script>
 </body>
 </html>

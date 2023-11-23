@@ -85,21 +85,21 @@
             </div>
 
             <div class="tombol mt-50">
-                <a href="payment" onclick="showPaymentAlert()">
                 <input type="submit" value="Submit">
+
             </div>
         </form>
         <div class="center-button">
             <p>belum punya akun?<br><a href="register">silahkan registrasi</p>
-        </div>
+            </div>
         </div>
     </div>
-    <script>
+
+    {{-- <script>
         function showPaymentAlert() {
             alert("Anda berhasil login.");
         }
-    </script>
-
+    </script> --}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>

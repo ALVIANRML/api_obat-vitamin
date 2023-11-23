@@ -109,6 +109,13 @@ background-color: #FEDDC8;
     display: flex;
     margin-bottom: 5px; /* Jarak antar kotak dalam satu kolom */
 }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
 
 .gbr-penyakit {
     left: 10px;

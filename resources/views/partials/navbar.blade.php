@@ -12,13 +12,20 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">log out</a></li>
+                        <li>
+                            <form action="logout" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><span class="material-symbols-outlined">
+                                </span>log out</button>
+                            </form>
+                            </li>
                     </ul>
                 </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="login">
-                        <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45">
+                        {{-- <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45"> --}}
+                        login
                     </a>
                 </li>
             @endauth

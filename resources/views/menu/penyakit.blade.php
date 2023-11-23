@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,900&display=swap" rel="stylesheet">
+
     <title> Penyakit • Vitality </title>
 </head>
 <body>
@@ -49,8 +50,10 @@
             Ketik penyakit yang ingin Anda cari!
         </p>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button type="button" class="search-button"> Search </button>
+            <form action="/penyakit" method="GET">
+            <input type="text" class="search-input" name="search" placeholder="Search...">
+            <button type="submit" class="search-button"> Search </button>
+            </form>
         </div>
         <div class="container">
             @foreach ($penyakit as $penyakits )

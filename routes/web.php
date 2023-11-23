@@ -22,13 +22,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('register', function () {
             return view('login,logout,register/register');
         });
-Route::post('register',[AuthController::class, 'storeregister']);
+Route::post('register',[AuthController::class, 'storeregister'])->middleware('guest');
 
 //login
 Route::get('login', function () {
     return view('login,logout,register/login');
-})->middleware('guest');
+})->name('login')->middleware('guest');
 Route::post('login',[AuthController::class, 'authenticate'])->middleware('guest');
+Route::post('logout', [AuthController::class, 'logout']);
+
 
 
 
@@ -67,14 +69,9 @@ Route::get('/menu', function () {
     Route::get('/vitality', function () {
         return view('menu/pembelian');
     });
-    Route::get('/vitality', [ObatvitaminController::class,'harga']);
+    Route::get('/vitality', [ObatvitaminController::class,'harga'])->middleware('auth');
     // Route::get('/vitality', [ObatvitaminController::class,'show']);
 
-//harus membawa token
-Route::middleware(['auth:api'])->group(function () {
-
-    Route::post('logout', [\app\Http\Controllers\Auth\AuthController::class, 'logout']);
-});
 
 Route::get('/umur', function () {
         return view('umur');
