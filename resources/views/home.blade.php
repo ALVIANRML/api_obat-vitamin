@@ -17,7 +17,7 @@
         <p class="teks"> Vitality </p>
         <p class="teks2"> Your health start here. </p>
             <center>
-                <a class="clickbtn" href="/umur">
+                <a class="clickbtn" href="/menu">
                     <button type="button" class="btn"> MULAI </button>
                 </a>
             </center>

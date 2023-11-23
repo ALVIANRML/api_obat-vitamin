@@ -11,8 +11,15 @@ class PenyakitController extends Controller
 {
     public function index()
     {
-        $penyakit = penyakit::get();
-        return view('menu.penyakit', ['penyakit'=> PenyakitResource::collection($penyakit)]);
+        $penyakit = penyakit::query(); // Gunakan query() untuk memulai query builder
+
+        if (request()->has('search')) {
+            $penyakit->where('nama', 'like', '%' . request()->input('search') . '%');
+        }
+
+        $penyakitResults = $penyakit->get(); // Ambil hasil query
+
+        return view('menu.penyakit', ['penyakit' => $penyakitResults]);
     }
 
 
