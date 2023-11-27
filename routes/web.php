@@ -70,7 +70,7 @@ Route::get('/menu', function () {
         return view('menu/pembelian');
     });
     Route::get('/vitality', [ObatvitaminController::class,'harga'])->middleware('auth');
-    // Route::get('/vitality', [ObatvitaminController::class,'show']);
+    // Route::get('/vitality-keranjang', [ObatvitaminController::class,'keranjang'])->middleware('auth');
 
 
 Route::get('/umur', function () {

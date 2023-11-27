@@ -19,15 +19,13 @@ class ObatvitaminResource extends JsonResource
 
 
         return[
-        'id'        => $this->id,
-        'nama'      => $this->nama,
-        'deskripsi' => $this->deskripsi,
-        'obat_dewasa' =>$this->obat_dewasa,
-        'obat_anak'=> $this->obat_anak,
-        'gambar'=> $this->gambar,
-        'harga'=>$this->harga,
-
-
+        'id'            => $this->id,
+        'nama'          => $this->nama,
+        'deskripsi'     => $this->deskripsi,
+        'obat_dewasa'   =>$this->obat_dewasa,
+        'obat_anak'     => $this->obat_anak,
+        'gambar'        => $this->gambar,
+        'harga'         =>$this->harga,
         ];
     }
 }
