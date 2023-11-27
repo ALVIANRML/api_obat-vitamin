@@ -119,40 +119,49 @@ form {
     background-color: #D85E69;
   }
 
-  /*
-  .search-container {
+.search-container {
     position: relative;
-  }
+    text-align: center;
+    margin: 0 auto; /* Tambahkan ini */
+}
 
-  #searchInput {
-    width: 350%;
+
+#searchInput,
+#searchButton {
+    display: inline-block; /* Menjadikan elemen sejajar */
+}
+
+#searchInput {
+    width: 250px; /* Sesuaikan lebar input sesuai kebutuhan */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-left: 180px;
-    margin-bottom: -45px;
+    margin-right: 5px; /* Jarak antara input dan tombol */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
+}
+
+#searchButton {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #5A073B;
+}
+
 
   #searchInput:focus {
     border-color: #5A073B;
     box-shadow: 0 0 5px #5A073B;
   }
 
-  #searchButton {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
 
-  #searchButton:hover {
-    background-color: #5A073B;
-  }
-  */
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -180,22 +189,44 @@ form {
     margin: 10px;
   }
 
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: -10%;
+    position: relative;
+  }
+
+  .column {
+    flex: 1; /* Merespons secara fleksibel, sehingga akan ada dua kolom */
+  }
+
   .picture {
     height: 150px;
     width: 40%;
-    margin-right: 0%;
+    margin-right: 30%;
     background-color:#92183D;
     border-radius: 7px 0 0 7px ;
+    overflow: hidden;
   }
 
-  .picture2 {
-    height: 150px;
-    width: 70%;
-    margin-left: 0%;
-    background-color:#ffffff;
-    border-radius: 0 7px 7px 0 ;
-  }
+  .image-in-picture {
+    width: 10px;
+    object-fit: cover; /* Menjaga aspek gambar */
+}
 
+
+  .picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Efek transisi pada hover */
+}
+
+.card:hover .picture img {
+    transform: scale(1.1); /* Efek zoom pada hover */
+}
   .text1 {
     margin-right: 100%;
     text-align: center;
@@ -210,9 +241,6 @@ form {
 
 .container1 {
     display: flex;
-    align-items: center;
-
-    justify-content: center;
     align-items: center;
 }
 
@@ -239,6 +267,7 @@ form {
   /* Gaya untuk tombol pencarian */
   .search-button {
     justify-content: center;
+    align-items: center;
     padding: 20px;
     background-color: #C82840;
     color: white;
@@ -256,7 +285,8 @@ form {
     border: 1px solid #C82840;
     border-radius: 5px 0 0 5px;
     cursor: pointer;
-    margin-top: 173%;
+    margin-top: 172%;
+    margin-left: 443%;
   }
   /* Gaya hover untuk tombol pencarian */
   .search-button:hover {
@@ -276,4 +306,120 @@ hr.fancy {
     height: 5px;
     background: linear-gradient(to right, #5a073b, #FFE7D4 , #5a073b); /* Gradien warna */
     box-shadow: 0 5px 5px -5px #333; /* Efek bayangan */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+
+  .card {
+    font-family: 'Poppins';
+    width: 90%; /* Mengisi lebar kolom */
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: 0.8s ease in out;
+  }
+
+
+  .card:hover{
+    box-shadow: 0 4px 8px rgb(146, 24, 61, 0.6);
+    border: 2px ;
+
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .p {
+    position: absolute;
+    top: -60px;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.popup-img {
+    width: 150px; /* Sesuaikan dengan kebutuhan */
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+.popup-text {
+    overflow: hidden; /* Agar tidak ada teks yang keluar dari area */
+}
+
+.popup-text h2 {
+    margin-top: 0;
+    font-size: 23px;
+    font-family: 'Poppins';
+    font-style: italic;
+    color: #C1272D;
+}
+
+.popup-text p {
+    font-family: 'Poppins';
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }

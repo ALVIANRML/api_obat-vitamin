@@ -26,8 +26,7 @@ footer, header, hgroup, menu, nav, section {
 
 @media screen and (max-width: 600px) {
     /* Gaya CSS untuk layar berlebar kurang dari 600px */
-}
-
+  }
 
 @font-face {
     font-family: 'Poppins';
@@ -41,8 +40,7 @@ body {
     background-color: #FFF5EF;
     justify-content: center;
     align-items: center;
-}
-
+  }
 
   .container {
     width: 80%;
@@ -56,14 +54,13 @@ body {
 
   .navbar {
     position: fixed;
-    margin-top: -135px;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     display: flex;
-    background-color: rgb(254, 221, 200, 0.8);
+    background-color: #feddc8cc;
     padding: 4px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -122,10 +119,101 @@ body {
     margin-bottom: -180px;
     text-align: center;
 }
-.mt-70{
-    margin-top: 70px;
+.text2 {
+    color: #5A073B;
+    font-family: 'Poppins';
+    font-size: 27px;
+    margin-top: 100px;
+    text-align: center;
+    font-weight: bold;
 }
-.isi{
-    font-family: monospace;
-    font-size: large;
+hr {
+    border: none;
+    height: 2px;
+    background-color: #333; /* Warna garis */
+    margin: 40px 110px; /* Jarak dari elemen di sekitarnya */
 }
+
+/* Atau, Anda juga dapat memberikan efek bayangan atau margin agar lebih menarik */
+hr.fancy {
+    border: none;
+    height: 5px;
+    background: linear-gradient(to right, #5a073b, #FFE7D4 , #5a073b); /* Gradien warna */
+    box-shadow: 0 5px 5px -5px #333; /* Efek bayangan */
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    gap: 5px;
+    margin-left: 190px; /* ubah nilai margin-right sesuai kebutuhan */
+}
+
+  .card {
+    font-family: 'Poppins';
+    width: 80%; /* Mengisi lebar kolom */
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover{
+    border: 1px solid #ccc;
+    background-color:  rgb(255, 88, 62, 0.5);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    /* margin-top: 100px; */
+  }
+
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+  }
+  .close {
+      position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .p {
+    text-align: center;
+    font-size: 20px ;
+  }
+
+  .p1 {
+    font-family: 'Poppins';
+  }
+
+  .h {
+    font-size: 30px;
+    color: #92183D;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Poppins';
+  }
