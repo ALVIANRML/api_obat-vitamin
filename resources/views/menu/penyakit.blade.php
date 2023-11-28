@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="gambar/logo pemweb (1).png">
     <link rel="stylesheet" type="text/css" href="/css/penyakit.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,800;1,400&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet">
     <title> Penyakit • Vitality </title>
 </head>
 <body>
@@ -44,18 +43,15 @@
                 <!-- Tambahkan box lainnya di sini -->
             </div>
 
-
-
-
             <div class="popup" id="popup1">
                 <div class="content">
                 <span class="close" onclick="closePopup(1)">&times;</span>
                 <h2 class="h">{{ $penyakits->nama }}</h2>
-                <h1>Penyebab:</h1>
+                <h1 class="h1">Penyebab</h1>
                 <p class="p1">{{ $penyakits->penyebab }}</p>
-                <h1>Pengobatan:</h1>
+                <h1 class="h1">Pengobatan</h1>
                 <p class="p1">{{ $penyakits->pengobatan }}</p>
-                <h1>Gejala:</h1>
+                <h1 class="h1">Gejala</h1>
                 <p class="p1">{{ $penyakits->gejala }}</p>
 
                 </div>

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="gambar/logo pemweb (1).png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap" rel="stylesheet">;
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,800;1,400&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/obatdanvitamin.css">
     <title> Vitamin dan Obat • Vitality </title>
 </head>
@@ -151,7 +150,5 @@ function closePopup(index) {
 }
                 </script>
                 </div>
-
-    <script src="js/vitality.js"></script>
 </body>
 </html>
