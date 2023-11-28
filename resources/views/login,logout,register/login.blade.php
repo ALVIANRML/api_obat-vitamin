@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vitality</title>
+    <link rel="icon" href="gambar/logo pemweb (1).png">
     <link rel="stylesheet" type="text/css" href="/css/register.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,800;1,400&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet">
+    <title> Log in </title>
 
     <style>
         input[type="text"],
@@ -18,6 +20,8 @@
                 height: 40px;
                 background-color:#fff;
                 border-radius: 10px;
+                border: none;
+                font-family: 'Poppins';
             }
 
         input[type="submit"]
@@ -28,6 +32,22 @@
                 width: 150px;
                 height: 50px;
                 border-radius: 20px;
+                border: none;
+                border-radius: 30px;
+                height: 50px;
+                width: 150px;
+                overflow: hidden;
+                position: relative;
+                font-family: "Dela Gothic One";
+                font-size: 15px;
+                border: none;
+                cursor: pointer;
+                line-height: normal;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #a92e41;
+                transition: background-color 0.3s;
             }
 
     </style>
@@ -85,12 +105,12 @@
             </div>
 
             <div class="tombol mt-50">
-                <input type="submit" value="Submit">
+                <input type="submit" value="SUBMIT">
 
             </div>
         </form>
         <div class="center-button">
-            <p>belum punya akun?<br><a href="register">silahkan registrasi</p>
+            <p> Belum punya akun? <br><a href="register"> Silahkan registrasi! </p>
             </div>
         </div>
     </div>

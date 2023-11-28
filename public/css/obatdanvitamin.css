@@ -28,10 +28,6 @@ footer, header, hgroup, menu, nav, section {
     /* Gaya CSS untuk layar berlebar kurang dari 600px */
   }
 
-@font-face {
-    font-family: 'Poppins';
-    src: ("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
-}
 body {
     width: 100%;
     height: 100vh;
@@ -45,6 +41,7 @@ body {
   .container {
     width: 80%;
     margin: 0 auto;
+    font-family: 'Poppins';
   }
 
   .responsive-image {
@@ -216,7 +213,7 @@ hr.fancy {
     margin-top: 30px;
     text-align: center;
     font-size: 13px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Poppins';
   }
   .menu {
     justify-content:left;
@@ -234,7 +231,7 @@ hr.fancy {
     border-radius: 20px;
     color: #fff;
     transition: 0.3s ;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Vollkorn';
   }
 
   .beli:hover{
@@ -249,7 +246,7 @@ hr.fancy {
 
   .card {
     cursor: pointer;
-    height: 260px;
+    height: 280px;
     width: 210px;
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -265,8 +262,7 @@ hr.fancy {
   }
 
   .card:hover{
-    background-color: #F9815C;
-    box-shadow: 0 4px 8px rgb(146, 24, 61, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   .popup {
@@ -279,21 +275,19 @@ hr.fancy {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
-    /* margin-top: 100px; */
   }
 
   .content {
     position: absolute;
     top: 66%;
     left: 50%;
-
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
   }
-
+  
   .close {
     position: absolute;
     top: 50px;
@@ -311,15 +305,19 @@ hr.fancy {
     margin-top: 40px;
   }
   h2{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Poppins';
+    font-size: 35px;
+    color: #92183D;
+    font-style: italic;
     font-weight: bold;
-    font-size: large;
+    margin-top: 20px;
   }
   .keterangan{
     font-weight: bold;
+    margin-top: 10px;
   }
   .keterangan-isi{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Vollkorn', serif;
   }
   .buy-button {
     position: absolute;
@@ -336,3 +334,6 @@ hr.fancy {
     transition: background-color 0.3s ease;
 }
 
+.buy-button:hover{
+    background-color:#92183D;
+}
