@@ -102,11 +102,11 @@
 
         <script>
                 function openPopup(index) {
-                document.getElementById(`popup${index}`).style.display = "block";
+                document.getElementById(popup${index}).style.display = "block";
                 }
 
                 function closePopup(index) {
-                document.getElementById(`popup${index}`).style.display = "none";
+                document.getElementById(popup${index}).style.display = "none";
                 }
             </script>
 

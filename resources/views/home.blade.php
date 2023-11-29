@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="background" style="background-image: url('gambar/home.jpg');">
+    <div>
 
         <p class="teks"> Vitality </p>
         <p class="teks2"> Your health start here. </p>

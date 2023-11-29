@@ -1,6 +1,8 @@
 body{
     background-image: url('/gambar/background pict fix.png');
     background-size: cover;
+    z-index: 1000;
+    padding: 70px;
 }
 
 .container {
@@ -23,8 +25,9 @@ body{
     width: 300px; /* Atur lebar kotak */
     height: 40px; /* Atur tinggi kotak */
     /* background-color:#fff; Warna latar belakang */
-    margin-left:78px;
+    margin-left: 78px;
     border-radius: 10px;
+    margin-top: 50px; /* Sesuaikan margin top sesuai keinginan Anda */
 }
 .mt-40{
     margin-top: 40px;
@@ -38,6 +41,8 @@ body{
 }
 .tombol{
     padding-left: 110px;
+    border: none;
+    margin-top: 35px;
 }
 .close {
     position: absolute;
@@ -65,6 +70,9 @@ body{
 .center-button {
     text-align: center; /* Mengatur alignment teks ke tengah */
     color: white;
-    /* Tambahkan properti lain sesuai keinginan */
+    font-family: 'Vollkorn';
+    margin-top: 15px;
 }
+
+
 

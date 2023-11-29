@@ -95,11 +95,11 @@
   @endforeach
         <script>
             function openPopup(index) {
-            document.getElementById(`popup${index+1}`).style.display = "block";
+            document.getElementById(popup${index+1}).style.display = "block";
             }
 
             function closePopup(index) {
-            document.getElementById(`popup${index+1}`).style.display = "none";
+            document.getElementById(popup${index+1}).style.display = "none";
             }
         </script>
     </div>

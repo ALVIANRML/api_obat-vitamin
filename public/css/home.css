@@ -34,18 +34,10 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    background-color: #290F28;
-    align-items: center;
-    justify-content: center;
-  }
-
-.background {
+    background-image: url('/gambar/background pict fix.png');
     background-size: cover;
+    z-index: 1000;
     padding: 200px;
-
 }
 
 .teks {

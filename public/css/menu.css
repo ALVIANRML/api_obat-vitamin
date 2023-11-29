@@ -25,8 +25,15 @@ footer, header, hgroup, menu, nav, section {
 }
 
 @media screen and (max-width: 600px) {
-    /* Gaya CSS untuk layar berlebar kurang dari 600px */
-  }
+        .container {
+            grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+        }
+
+        .penyakit1, .deskripsi1, .jual1, .rumahsakit1 {
+            width: 100%; /* Mengisi lebar layar pada layar kecil */
+        }
+}
+
 
 @font-face {
     font-family: 'Poppins';
@@ -37,12 +44,17 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color: #FEDDC8;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
   }
 
+  .background {
+    background-color: #FFF5EF;
+    height: 150vh; /* Tinggi 100% dari viewport height */
+}
+
   .container {
+    grid-template-columns: repeat(4, 1fr);
     width: 80%;
     margin: 0 auto;
     display: grid;
@@ -50,14 +62,13 @@ body {
     left: 60px;
     position: absolute;
     align-items: center;
-    grid-template-columns: repeat(4, 1fr); /* Empat kolom dengan lebar fleksibel */
     gap: 2px; /* Jarak antar kolom */
   }
 
   .responsive-image {
     max-width: 100%;
-height: auto;
-background-color: #FEDDC8;
+    height: auto;
+    background-color: #FEDDC8;
   }
 
   .navbar {
@@ -235,3 +246,6 @@ background-color: #FEDDC8;
       background-color: #EAA0A6;
   }
 
+  .container {
+    width: 80%;
+}
