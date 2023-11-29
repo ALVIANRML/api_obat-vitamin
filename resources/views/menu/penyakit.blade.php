@@ -30,10 +30,9 @@
                                 <li>
                                     <form action="logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="dropdown-item"><span class="material-symbols-outlined">
-                                        </span>log out</button>
+                                        <button type="submit" class="dropdown-item"><span class="material-symbols-outlined"></span>log out</button>
                                     </form>
-                                    </li>
+                                </li>
                             </ul>
                         </li>
                     @else
@@ -48,19 +47,13 @@
             </div>
         </nav>
 
-
-        </div>
-        <p class="text">
-            Penyakit
-        </p>
-        <p class="text1">
-            Ketik penyakit yang ingin Anda cari!
-        </p>
+        <p class="text">Penyakit</p>
+        <p class="text1">Ketik penyakit yang ingin Anda cari!</p>
         <div class="search-container">
             <form action="/penyakit" method="GET">
-            <input type="text" class="search-input"  name="search"  placeholder="Search...">
-            <button type="submit" class="search-button"> Search </button>
-        </form>
+                <input type="text" class="search-input" name="search" placeholder="Search...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
         </div>
 
         <p class="text2"> Daftar Penyakit  </p>
@@ -68,38 +61,31 @@
         @foreach ($penyakit as $index => $penyakits)
             <div class="grid-container">
                 <div class="card" onclick="openPopup({{ $index }})">
-                    <p class="p"> {{ $penyakits->nama }} </p>
+                    <p class="p">{{ $penyakits->nama }}</p>
                 </div>
-                <!-- Tambahkan box lainnya di sini -->
             </div>
-
-
-
 
             <div class="popup" id="popup{{ $index + 1 }}">
                 <div class="content">
-                <span class="close" onclick="closePopup({{ $index }})">&times;</span>
-                <h2 class="h">{{ $penyakits->nama }}</h2>
-                <h1>Penyebab:</h1>
-                <p class="p1">{{ $penyakits->penyebab }}</p>
-                <h1>Pengobatan:</h1>
-                <p class="p1">{{ $penyakits->pengobatan }}</p>
-                <h1>Gejala:</h1>
-                <p class="p1">{{ $penyakits->gejala }}</p>
-
+                    <span class="close" onclick="closePopup({{ $index }})">&times;</span>
+                    <h2 class="h">{{ $penyakits->nama }}</h2>
+                    <h1>Penyebab:</h1>
+                    <p class="p1">{{ $penyakits->penyebab }}</p>
+                    <h1>Pengobatan:</h1>
+                    <p class="p1">{{ $penyakits->pengobatan }}</p>
+                    <h1>Gejala:</h1>
+                    <p class="p1">{{ $penyakits->gejala }}</p>
                 </div>
             </div>
-            </div>
+        @endforeach
 
-
-  @endforeach
         <script>
             function openPopup(index) {
-            document.getElementById(popup${index+1}).style.display = "block";
+                document.getElementById(`popup${index + 1}`).style.display = "block";
             }
 
             function closePopup(index) {
-            document.getElementById(popup${index+1}).style.display = "none";
+                document.getElementById(`popup${index + 1}`).style.display = "none";
             }
         </script>
     </div>
