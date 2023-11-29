@@ -212,6 +212,11 @@ hr.fancy {
     width:10px;
   }
 
+  .button-container {
+    position: relative;
+    text-align: center; /* Sesuaikan dengan kebutuhan */
+}
+
   .teks {
     text-align: center;
     /* font-size: 13px; */
@@ -263,12 +268,9 @@ hr.fancy {
     border-radius: 10px;
     transition: 0.3s;
   }
-
   .card:hover{
-    background-color: #F9815C;
-    box-shadow: 0 4px 8px rgb(146, 24, 61, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
-
   .popup {
     display: none;
     position: fixed;
@@ -282,6 +284,32 @@ hr.fancy {
     /* margin-top: 100px; */
   }
 
+  .popup-text {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Tampilkan elemen secara vertikal */
+}
+
+.popup-text .button-container {
+    text-align: center;
+}
+
+.popup-text .buy-button1 {
+    width: 130px;
+    padding: 8px 16px;
+    background-color: #C82840;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Sesuaikan dengan nilai margin yang diinginkan */
+}
+
+.popup-text.quantity-input {
+    margin-bottom: 10px; /* Berikan jarak antara input kuantitas dan tombol keranjang */
+}
+
   .content {
     position: absolute;
     top: 50%;
@@ -290,16 +318,19 @@ hr.fancy {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
+    height: 600px; /* Sesuaikan dengan ukuran yang diinginkan */
+    overflow: auto;
   }
 
   .close {
-    position: absolute;
+    position: fixed; /* Tetap pada posisi yang sama saat scrolling */
     top: 10px;
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-  }
+    z-index: 10000; /* Pastikan z-index lebih tinggi dari elemen lain di halaman */
+}
   .p {
     position: absolute;
 
@@ -316,12 +347,12 @@ hr.fancy {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.buy-button {
+.buy-button1 {
     position: absolute;
-    bottom: 10px;
+    top: 3px;
     left: 50%;
-    width: 130px;
     transform: translateX(-50%);
+    width: 130px;
     padding: 8px 16px;
     background-color: #C82840;
     color: white;
@@ -329,6 +360,26 @@ hr.fancy {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px; /* Sesuaikan dengan nilai margin yang diinginkan */
+}
+.buy-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    padding: 8px 16px;
+    background-color: #C82840;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Sesuaikan dengan nilai margin yang diinginkan */
+}
+
+.buy-button:hover {
+    background-color:#92183D;
 }
 /* untuk mt"an */
 .mt-40{

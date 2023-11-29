@@ -192,7 +192,9 @@ hr.fancy {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
+    height: 550px; /* Sesuaikan dengan ukuran yang diinginkan */
+    overflow: auto;
   }
   .scrollable-content {
     max-height: calc(100% - 3000px); /* Set maksimum tinggi konten yang dapat discroll */
@@ -230,3 +232,4 @@ hr.fancy {
     font-size: 25px;
     color: #5a073b;
   }
+

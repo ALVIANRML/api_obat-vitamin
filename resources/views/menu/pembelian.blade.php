@@ -58,32 +58,35 @@
                                     <p class="keterangan"> Dosis Anak   : </p>
                                     <p class="keterangan-isi">{{ $obatvitamins->obat_anak }} <br></p>
                                     <label for="quantity{{ $obatvitamins->id }}">Kuantitas:</label>
-                        <input type="number" id="quantity{{ $obatvitamins->id }}" class="quantity-input" value="1" min="1" onchange="calculateTotal(10000000000, 'quantity{{ $obatvitamins->id }}', 'total-price3')">
+                                    <input type="number" id="quantity{{ $obatvitamins->id }}" class="quantity-input" value="1" min="1" onchange="calculateTotal(10000000000, 'quantity{{ $obatvitamins->id }}', 'total-price3')">
                                     <p class="keterangan"> Harga   : </p>
                                     <p id="total-price{{ $obatvitamins->id }}" class="keterangan-isi">Rp. {{ $obatvitamins->harga }} <br></p>
-                                    <div class="button-container">
-                                        <button class="buy-button" onclick="buyItem()"> keranjang</button>
+
+                                        <div class="button-container">
+                                            <button class="buy-button1" onclick="buyItem()"> Keranjang</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
                     @endforeach
                 </div>
             </div>
 
 
+
             <script>
-                function openPopup(index) {
-                    document.getElementById(`popup${index + 1}`).style.display = "block";
+                    function openPopup(index) {
+                    var popup = document.getElementById(`popup${index + 1}`);
+                    popup.style.display = "block";
+                    document.body.style.overflow = "hidden"; // Mencegah scrolling pada latar belakang
                 }
 
                 function closePopup(index) {
-                    document.getElementById(`popup${index + 1}`).style.display = "none";
+                    var popup = document.getElementById(`popup${index + 1}`);
+                    popup.style.display = "none";
+                    document.body.style.overflow = "auto"; // Mengaktifkan scrolling kembali pada latar belakang
                 }
 
-            </script>
-            <script>
                 function calculateTotal(pricePerItem, quantityInputId, totalPriceId) {
                     // Dapatkan nilai kuantitas dari elemen input
                     var quantity = document.getElementById(quantityInputId).value;
@@ -94,7 +97,39 @@
                     // Setel nilai total harga ke elemen output
                     document.getElementById(totalPriceId).innerText = 'Rp. ' + total;
                 }
+
+                function buyItem() {
+                    // Logika untuk menambahkan item ke keranjang belanja
+                    console.log('Item telah ditambahkan ke keranjang!');
+                    // Anda dapat menambahkan logika pengiriman data ke backend atau tindakan lain yang sesuai dengan kebutuhan aplikasi Anda.
+                }
+
+
+                function openPopup(index) {
+                    document.getElementById(`popup${index + 1}`).style.display = "block";
+                }
+
+                function closePopup(index) {
+                    document.getElementById(`popup${index + 1}`).style.display = "none";
+                }
+
             </script>
+
+            <script>
+                
+            </script>
+            {{-- <script>
+                function calculateTotal(pricePerItem, quantityInputId, totalPriceId) {
+                    // Dapatkan nilai kuantitas dari elemen input
+                    var quantity = document.getElementById(quantityInputId).value;
+
+                    // Hitung total harga
+                    var total = pricePerItem * quantity;
+
+                    // Setel nilai total harga ke elemen output
+                    document.getElementById(totalPriceId).innerText = 'Rp. ' + total;
+                }
+            </script> --}}
 
 </body>
 </html>
