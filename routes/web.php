@@ -50,12 +50,13 @@ Route::get('/menu', function () {
     Route::apiResource('obatvitamin', \App\Http\Controllers\Obatvitamin\ObatvitaminController::class);
 
     //rumah sakit
-    Route::get('maps', function () {
-                return view('maps');
-            });
+    // Route::get('maps', function () {
+    //             return view('maps');
+    //         });
     Route::get('/rumahsakit', function () {
                 return view('menu/rumah_sakit');
     });
+    Route::apiResource('rumahsakit', \App\Http\Controllers\Rumahsakit\RumahsakitController::class);
 
     //penyakit
     Route::get('/penyakit', function () {
