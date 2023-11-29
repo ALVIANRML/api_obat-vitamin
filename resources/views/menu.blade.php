@@ -57,11 +57,11 @@
     <div class="rumahsakit1">
         <img class="gbr-rumahsakit" src="gambar/rs.png" alt="rumahsakit">
         <p class="teks-rumahsakit">
-            Rumah Sakit <br> Terdekat
+            Rumah Sakit 
         </p>
     </div>
     </a>
-  
+
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </div>
 
