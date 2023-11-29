@@ -68,21 +68,20 @@
 
             <div class="grid-container">
                 <div class="col-md-4 mt-40" >
+
                     @foreach ($rumahsakit as $index => $rumahsakits)
                     <div class="card" onclick="openPopup({{ $index }})">
-                    <div class="picture" img>
-                        <img src="{{ $rumahsakits->gambar }}" alt="Rumah Sakit">
-                    </div>
-                    <div class="picture2">
-                        <p class="text1"> {{ $rumahsakits->nama }} </p>
+                        <div class="picture" img>
+                            <img src="{{ $rumahsakits->gambar }}" alt="Rumah Sakit">
+                        </div>
+                        <div class="picture2">
+                            <p class="text1"> {{ $rumahsakits->nama }} </p>
+                        </div>
                     </div>
                 </div>
 
-            </div>
 
-        </div>
-
-                <div class="popup" id="popup">
+                <div class="popup" id="popup{{ $index + 1 }}">
                     <div class="content">
                         <span class="close" onclick="closePopup({{ $index }})">&times;</span>
                         <div class="popup-body">
@@ -97,16 +96,14 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
 
 
         <script>
                 function openPopup(index) {
-                document.getElementById(popup${index}).style.display = "block";
+                    document.getElementById(`popup${index + 1}`).style.display = "block";
                 }
-
                 function closePopup(index) {
-                document.getElementById(popup${index}).style.display = "none";
+                    document.getElementById(`popup${index + 1}`).style.display = "none";
                 }
             </script>
 
