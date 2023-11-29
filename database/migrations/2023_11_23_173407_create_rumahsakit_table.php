@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('rumahsakit', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            
+            $table->text('nama')->nullable();
+            $table->text('alamat')->nullable();
+            $table->string('kontak')->nullable();
+            $table->string('gambar')->nullable();
+            $table->text('map')->nullable();
             $table->timestamps();
         });
     }

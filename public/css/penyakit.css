@@ -186,28 +186,21 @@ hr.fancy {
 
   .content {
     position: absolute;
-    top: 50%;
+    top: 66%;
     left: 50%;
+
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
-    height: 550px; /* Sesuaikan dengan ukuran yang diinginkan */
-    overflow: auto;
-  }
-  .scrollable-content {
-    max-height: calc(100% - 3000px); /* Set maksimum tinggi konten yang dapat discroll */
-    overflow-y: auto; /* Aktifkan overflow-y agar dapat discroll */
+
   }
   .close {
-    position: absolute;
-    top: 50px;
-    right: 40px;
+      position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 20px;
     cursor: pointer;
-    /* height:50px ; */
-    /* width: 50px; */
   }
   .p {
     text-align: center;
@@ -215,21 +208,13 @@ hr.fancy {
   }
 
   .p1 {
-    font-family: 'Vollkorn';
+    font-family: 'Poppins';
   }
 
   .h {
-    font-family: 'Poppins';
-    font-size: 35px;
-    color:#92183D;
+    font-size: 30px;
+    color: #92183D;
     font-weight: bold;
-    margin-top: 20px;
-    align-items: center;
-  }
-
-  .h1 {
+    font-style: italic;
     font-family: 'Poppins';
-    font-size: 25px;
-    color: #5a073b;
   }
-
