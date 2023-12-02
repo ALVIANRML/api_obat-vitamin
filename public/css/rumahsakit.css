@@ -28,6 +28,45 @@ html, body, div, span, applet, object, iframe,
         /* Gaya CSS untuk layar berlebar kurang dari 600px */
     }
 
+    @media (min-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Kolom 1 di perangkat mobile */
+    @media (max-width: 767px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* Gaya untuk layar seluler */
+@media only screen and (max-width: 600px) {
+    .popup {
+        width: 90vw; /* Sesuaikan dengan lebar yang diinginkan, 90vw artinya 90% dari lebar viewport */
+        height: 80vh; /* Sesuaikan dengan tinggi yang diinginkan, 80vh artinya 80% dari tinggi viewport */
+    }
+
+    .popup-img {
+        width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
+        height: auto;
+    }
+
+    .popup-text h2 {
+        font-size: 24px; /* Sesuaikan dengan ukuran yang diinginkan */
+    }
+
+    .popup-text p {
+        font-size: 16px; /* Sesuaikan dengan ukuran yang diinginkan */
+    }
+
+    .content {
+        padding: 20px; /* Sesuaikan dengan padding yang diinginkan */
+    }
+}
+
+
     @font-face {
         font-family: 'Poppins';
         src: ("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
@@ -37,6 +76,13 @@ html, body, div, span, applet, object, iframe,
         width: 100%;
         height: 100vh;
         margin: 0;
+        background-color: #FFF5EF;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background {
+        background-size: auto;
         background-color: #FFF5EF;
         justify-content: center;
         align-items: center;
@@ -78,18 +124,16 @@ html, body, div, span, applet, object, iframe,
         font-weight: bold;
         text-align: center;
         position: relative;
-        top: 150px;
+        top: 10vw; /* Gunakan unit vw untuk ukuran responsif */
     }
     .text2 {
-        font-size: 30px;
-        font-family: 'Poppins';
         color: #5A073B;
-        font-weight: bold;
+        font-family: 'Poppins';
+        font-size: 27px;
+        margin-top: 100px;
         text-align: center;
-        position: relative;
-        top: 120px;
+        font-weight: bold;
     }
-
     /*
     form {
         background-color: #FFF5EF;
@@ -161,7 +205,6 @@ html, body, div, span, applet, object, iframe,
         box-shadow: 0 0 5px #5A073B;
     }
 
-
     .container {
         display: flex;
         flex-wrap: wrap;
@@ -172,30 +215,6 @@ html, body, div, span, applet, object, iframe,
 
     .column {
         flex: 1; /* Merespons secara fleksibel, sehingga akan ada dua kolom */
-    }
-
-    .box {
-        font-family: 'Poppins';
-        width: 100%; /* Mengisi lebar kolom */
-        height: 150px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        font-size: 15px;
-        justify-content: center;
-        align-items: center;
-        margin: 10px;
-    }
-
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: -10%;
-        position: relative;
     }
 
     .column {
@@ -203,12 +222,14 @@ html, body, div, span, applet, object, iframe,
     }
 
     .picture {
-        height: 150px;
+        height: 120px;
         width: 40%;
-        margin-right: 30%;
-        background-color:#92183D;
-        border-radius: 7px 0 0 7px ;
+        background-color:#92183d00;
+        object-fit: cover;
+        border-radius: 7px;
+        align-items: center;
         overflow: hidden;
+        transition: transform 0.3s ease; /* Efek transisi pada hover */
     }
 
     .image-in-picture {
@@ -218,13 +239,17 @@ html, body, div, span, applet, object, iframe,
 
 
     .picture img {
-        width: 100%;
+        width: 80%;
         height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease; /* Efek transisi pada hover */
+        align-items: center;
+        object-fit: cover; /* Tambahkan properti ini */
+        background-color: #92183d00;
+        border-radius: 7px;
+        transition: transform 0.3s ease;
     }
 
-    .card:hover .picture img {
+
+    .card:hover .picture img, picture{
         transform: scale(1.1); /* Efek zoom pada hover */
     }
     .text1 {
@@ -242,12 +267,14 @@ html, body, div, span, applet, object, iframe,
     .container1 {
         display: flex;
         align-items: center;
+        flex-wrap: wrap; /* Tambahkan wrap agar elemen dapat meluncur ke baris berikutnya pada layar kecil */
     }
 
     .location-container{
         display: flex;
         align-items: center;
     }
+
 
     .search-container {
         text-align: center;
@@ -257,13 +284,19 @@ html, body, div, span, applet, object, iframe,
     }
 
     /* Gaya untuk input pencarian */
-    .search-input {
+    /* .search-input {
         padding: 18px;
         border: 1px solid #ccc;
         outline: none;
         margin-top: 50%;
+    } */
+    .search-input {
+        padding: 18px;
+        border: 1px solid #ccc;
+        outline: none;
+        margin-top: 40%;
+        width: 100%; /* Gunakan lebar 100% agar input mengisi seluruh lebar kontainer */
     }
-
     /* Gaya untuk tombol pencarian */
     .search-button {
         justify-content: center;
@@ -274,7 +307,7 @@ html, body, div, span, applet, object, iframe,
         border: 1px solid #C82840;
         border-radius: 0 5px 5px 0;
         cursor: pointer;
-        margin-top: 50%;
+        margin-top: 2.9%;
     }
 
     .locationBtn {
@@ -310,34 +343,41 @@ html, body, div, span, applet, object, iframe,
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         margin-top: 10px;
-        margin-left: 50px;
+        margin-left: 5vw;
         margin-bottom: 5px;
-        margin-right: 5px;
+        margin-right: 5vw;
     }
+    /* .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); Gunakan auto-fill untuk kolom responsif
+        gap: 8px;
+        margin-top: 10px;
+        margin-left: 5vw;
+        margin-bottom: 5px;
+        margin-right: 5vw;
+    } */
 
-
-    .card {
-        margin-top: 100px;
+      .card {
+        margin-top: 5vw;
         cursor: pointer;
-        height: 260px;
-        width: 600px;
+        height: auto;
+        width: 100%; /* Gunakan lebar 100% agar mengisi seluruh lebar kontainer */
+        max-width: 600px; /* Tetapkan lebar maksimum */
         background-color: #ffffff;
         border: 1px solid #ccc;
         display: flex;
-        margin-left: 20px;
         justify-content: center;
         align-items: center;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         transition: 0.3s;
-      }
+    }
 
 
     .card:hover{
-        box-shadow: 0 4px 8px rgb(146, 24, 61, 0.6);
+        box-shadow: 0 4px 8px rgba(59, 59, 59, 0.6);
         border: 2px ;
 
     }
@@ -353,16 +393,7 @@ html, body, div, span, applet, object, iframe,
         z-index: 9999;
     }
 
-    .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
 
-    }
 
     .close {
         position: absolute;
@@ -376,6 +407,49 @@ html, body, div, span, applet, object, iframe,
         top: -60px;
     }
 
+    .popup-img-container {
+        text-align: center;
+    }
+
+    .popup-img {
+        max-width: 100%; /* Sesuaikan dengan kebutuhan */
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .popup-text h2 {
+            font-family: 'Poppins';
+            font-size: 35px;
+            color: #92183D;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 20px;
+    }
+
+    .popup-text p {
+        font-family: 'Vollkorn';
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
     .content {
         position: absolute;
         top: 50%;
@@ -384,35 +458,31 @@ html, body, div, span, applet, object, iframe,
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
+        width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
+        height: 550px; /* Sesuaikan dengan ukuran yang diinginkan */
+        overflow: auto;
+        @media screen and (max-width: 600px) {
+            width: 90%;
+            height: 50%;
+        }
     }
 
-    .popup-img {
-        width: 150px; /* Sesuaikan dengan kebutuhan */
-        height: auto;
-        float: left;
-        margin-right: 20px;
+    .popup-body {
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .popup-text {
-        /* overflow: hidden; Agar tidak ada teks yang keluar dari area */
-        margin-top: 30px;
-    text-align: center;
-    font-size: 13px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-
+    .popup-info {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .popup-text h2 {
-        margin-top: 0;
-        font-size: 23px;
-        font-family: 'Poppins';
-        font-style: italic;
-        color: #C1272D;
+    .popup-info p {
+        flex-basis: 48%; /* 48% to leave some gap */
+        text-align: left;
+        margin: 0;
     }
 
-    .popup-text p {
-        font-family: 'Poppins';
-    }
     .close {
         position: absolute;
         top: 10px;

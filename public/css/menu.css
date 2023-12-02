@@ -26,14 +26,22 @@ footer, header, hgroup, menu, nav, section {
 
 @media screen and (max-width: 600px) {
         .container {
-            grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Menggunakan auto-fit agar kolom sesuai lebar dan minimal 200px */
         }
-
         .penyakit1, .deskripsi1, .jual1, .rumahsakit1 {
             width: 100%; /* Mengisi lebar layar pada layar kecil */
         }
 }
 
+@media screen and (max-width: 768px) {
+    .text {
+      font-size: 2em; /* Adjust the font size for smaller screens */
+      margin-top: 60px; /* Adjust the margin-top for spacing */
+    }
+    .text2 {
+      font-size: 1.2em; /* Adjust the font size for smaller screens */
+    }
+  }
 
 @font-face {
     font-family: 'Poppins';
@@ -41,8 +49,10 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    background-color: #FFF5EF;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background-size: cover;
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -50,21 +60,23 @@ body {
 
   .background {
     background-color: #FFF5EF;
-    height: 150vh; /* Tinggi 100% dari viewport height */
+    height: 200vh;
+    position: relative;
 }
 
-  .container {
-    grid-template-columns: repeat(4, 1fr);
+.container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     width: 80%;
-    margin: 0 auto;
+    margin: 200px auto;
     display: grid;
-    top: 250px;
-    left: 60px;
-    position: absolute;
     align-items: center;
-    gap: 2px; /* Jarak antar kolom */
-  }
+    gap: 10px; /* Jarak antar kolom */
+}
 
+  .menu {
+    justify-content:center;
+    position: relative;
+}
   .responsive-image {
     max-width: 100%;
     height: auto;
@@ -73,7 +85,6 @@ body {
 
   .navbar {
     position: fixed;
-    margin-top: -135px;
     top: 0;
     left: 0;
     width: 100%;
@@ -86,9 +97,57 @@ body {
     z-index: 1000;
   }
 
+  .navbar-brand img {
+    width: 100%;
+}
+
+/* Style untuk menu pada navbar */
+.navbar-nav {
+    margin-left: auto; /* Menempatkan menu di sebelah kanan */
+}
+
+/* Style untuk setiap item pada navbar */
+.navbar-nav .nav-item {
+    margin-right: 10px; /* Memberikan jarak antar item */
+}
+
+/* Style untuk teks pada menu */
+.navbar-nav .nav-link {
+    color: #000; /* Warna teks menu */
+}
+
+/* Style untuk tombol toggler pada perangkat seluler */
+.navbar-toggler {
+    border: none; /* Menghilangkan border tombol */
+}
+
+/* Style untuk menu dan dropdown pada perangkat seluler */
+@media screen and  (max-width: 600px) {
+    .navbar-nav {
+        flex-direction: column; /* Menata menu secara vertikal */
+        align-items: flex-start; /* Menempatkan menu di kiri */
+        margin-top: 10px; /* Memberikan jarak atas pada menu */
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 0; /* Menghilangkan jarak antar item */
+    }
+
+    /* Style untuk tombol toggler pada perangkat seluler */
+    .navbar-toggler {
+        background-color: #fff; /* Memberikan warna latar belakang tombol */
+    }
+
+    /* Style untuk teks pada menu perangkat seluler */
+    .navbar-nav .nav-link {
+        text-align: left; /* Menata teks menu menjadi kiri */
+        padding: 10px; /* Memberikan padding pada teks menu */
+        width: 100%; /* Membuat teks menu mengisi lebar penuh */
+    }
+}
+
   .menu {
     justify-content:left;
-    left: 580%;
     position: relative;
 }
 
@@ -107,7 +166,7 @@ body {
     text-align: center;
     font-size: 20px;
     color: #47020c;
-    top: 90px;
+    top: 70px;
     position: relative;
 }
   .penyakit1 {
@@ -119,14 +178,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     display: flex;
     margin-bottom: 5px; /* Jarak antar kotak dalam satu kolom */
-}
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
+  }
 
 .gbr-penyakit {
     left: 10px;
@@ -246,6 +298,3 @@ body {
       background-color: #EAA0A6;
   }
 
-  .container {
-    width: 80%;
-}

@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="gambar/logo pemweb (1).png">
-    <link rel="stylesheet" type="text/css" href="/css/penyakit.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet"></head>
+    <link rel="stylesheet" type="text/css" href="/css/penyakit.css">
     <title> Penyakit • Vitality </title>
-</head>
+
 <body>
     <div class="background">
         <nav class="navbar sticky-top bg-body-tertiary">
@@ -48,7 +47,6 @@
         </nav>
 
         <p class="text">Penyakit</p>
-        <p class="text1">Ketik penyakit yang ingin Anda cari!</p>
         <div class="search-container">
             <form action="/penyakit" method="GET">
                 <input type="text" class="search-input" name="search" placeholder="Search...">
@@ -68,13 +66,15 @@
             <div class="popup" id="popup{{ $index + 1 }}">
                 <div class="content">
                     <span class="close" onclick="closePopup({{ $index }})">&times;</span>
-                    <h2 class="h">{{ $penyakits->nama }}</h2>
-                    <h1>Penyebab:</h1>
-                    <p class="p1">{{ $penyakits->penyebab }}</p>
-                    <h1>Pengobatan:</h1>
-                    <p class="p1">{{ $penyakits->pengobatan }}</p>
-                    <h1>Gejala:</h1>
-                    <p class="p1">{{ $penyakits->gejala }}</p>
+
+                    <center><h1>{{ $penyakits->nama }}</h1></center>
+
+                    <p class="keterangan"> Penyebab </p>
+                    <p class="keterangan-isi">{{ $penyakits->penyebab }}<br></p>
+                    <p class="keterangan">Pengobatan</p>
+                    <p class="keterangan-isi">{{ $penyakits->pengobatan }}<br></p>
+                    <p class="keterangan">Gejala</p>
+                    <p class="keterangan-isi">{{ $penyakits->gejala }}</p>
                 </div>
             </div>
         @endforeach

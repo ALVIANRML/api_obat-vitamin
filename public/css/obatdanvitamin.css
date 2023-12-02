@@ -288,6 +288,10 @@ hr.fancy {
     width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
     height: 600px; /* Sesuaikan dengan ukuran yang diinginkan */
     overflow: auto;
+    @media screen and (max-width: 600px) {
+        width: 90%;
+        height: 70%;
+    }
   }
 
   .close {
@@ -317,6 +321,7 @@ hr.fancy {
   .keterangan{
     font-weight: bold;
     margin-top: 10px;
+    color: #5A073B;
   }
   .keterangan-isi{
     font-family: 'Vollkorn', serif;
