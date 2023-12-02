@@ -25,9 +25,10 @@ footer, header, hgroup, menu, nav, section {
 }
 
 @media screen and (max-width: 600px) {
-    /* Gaya CSS untuk layar berlebar kurang dari 600px */
-  }
-
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
 @font-face {
     font-family: 'Poppins';
     src: ("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
@@ -144,6 +145,15 @@ table {
     font-weight: bold;
 }
 
+/* Add a media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .text1 {
+        font-size: 20px; /* Adjust the font size for smaller screens */
+        margin-top: 60px; /* Adjust the margin for smaller screens */
+    }
+}
+
+
 hr {
     border: none;
     height: 2px;
@@ -221,8 +231,9 @@ hr.fancy {
     text-align: center;
     /* font-size: 13px; */
     /* flex: 2; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Poppins';
   }
+
   .menu {
     justify-content:left;
     left: 580%;
@@ -282,6 +293,9 @@ hr.fancy {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     /* margin-top: 100px; */
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
   }
 
   .popup-text {
@@ -295,7 +309,7 @@ hr.fancy {
 }
 
 .popup-text .buy-button1 {
-    width: 130px;
+    width: 100%;
     padding: 8px 16px;
     background-color: #C82840;
     color: white;
@@ -321,6 +335,10 @@ hr.fancy {
     width: 700px; /* Sesuaikan dengan ukuran yang diinginkan */
     height: 600px; /* Sesuaikan dengan ukuran yang diinginkan */
     overflow: auto;
+    @media screen and (max-width: 600px) {
+        width: 90%;
+        height: 70%;
+    }
   }
 
   .close {
@@ -333,8 +351,13 @@ hr.fancy {
 }
   .p {
     position: absolute;
-
   }
+.hr {
+    width: 100%; /* Panjang horizontal rule */
+    margin: 10px auto; /* Jarak atas dan bawah 20px, dan center secara horizontal */
+    border: 2px solid #000000;
+    border-radius: 5px;
+    }
   h2{
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -342,9 +365,10 @@ hr.fancy {
 }
 .keterangan{
     font-weight: bold;
+    color: #5A073B;
 }
 .keterangan-isi{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Vollkorn';
 }
 
 .buy-button1 {
@@ -389,3 +413,11 @@ hr.fancy {
     margin-bottom: 50px;
 }
 
+h2 {
+    font-family: 'Poppins';
+    font-size: 35px;
+    color: #92183D;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 20px;
+}

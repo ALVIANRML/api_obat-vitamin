@@ -45,7 +45,7 @@ class ObatvitaminSeeder extends Seeder
                 Dengan begitu, saluran pernapasan yang sebelumnya menyempit dapat lebih melebar dan aliran udara dari dan ke dalam paru-paru akan lebih lancar.',
                 'obat_dewasa'   =>'Dewasa: 80/4,5 mcg 1-2 inhalasi 2 kali sehari atau 160/4,5 mcg 1-2 inhalasi 2 kali sehari',
                 'obat_anak' =>'Anak (6 tahun keatas) dosis rendah untuk anak 6-11 tahun',
-                'harga' => 100000,
+                'harga' => 10000,
                 'gambar'=>'gambar/foto_obat/formoterol.jpg',
             ],
             [

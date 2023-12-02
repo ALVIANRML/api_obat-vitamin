@@ -1,33 +1,67 @@
-body{
+@media screen and (max-width: 600px) {
+    .kotak {
+        width: 90%;
+    }
+
+    .kolom {
+        font-size: 14px; /* Sesuaikan ukuran font pada layar kecil */
+        height: auto; /* Mengembalikan tinggi kolom ke otomatis */
+        margin-top: 20px; /* Sesuaikan margin top sesuai keinginan Anda */
+    }
+
+    .tombol {
+        margin-top: 20px; /* Sesuaikan margin top sesuai keinginan Anda */
+    }
+
+    .close {
+        right: 20px; /* Sesuaikan margin right sesuai keinginan Anda */
+        top: 20px; /* Sesuaikan margin top sesuai keinginan Anda */
+        font-size: 24px; /* Sesuaikan ukuran font pada layar kecil */
+    }
+
+    .center-button {
+        font-size: 12px; /* Sesuaikan ukuran font pada layar kecil */
+        margin-top: 15px; /* Sesuaikan margin top sesuai keinginan Anda */
+    }
+}
+body {
     background-image: url('/gambar/background pict fix.png');
     background-size: cover;
     z-index: 1000;
-    padding: 70px;
+    padding: 8vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    margin: 0;
+    font-family: 'Poppins';
 }
 
 .container {
-    display: flex; /* Untuk menggunakan display flex */
-    justify-content: center; /* Untuk meletakkan di tengah secara horizontal */
-    align-items: center; /* Untuk meletakkan di tengah secara vertikal */
-    height: 100vh; /* Sesuaikan dengan ketinggian viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .kotak {
-    width: 410px; /* Atur lebar kotak */
-    height: 555px; /* Atur tinggi kotak */
-    background-color: #5B073B; /* Warna latar belakang */
-    box-shadow: 0px 4px 80px 0px #290F28;
+    width: 80%;
+    max-width: 400px;
+    background-color: #5B073B;
+    box-shadow: 0px 4px 20px 0px #290F28;
     border-radius: 20px;
-  }
-.gambar{
-    padding-left: 130px;
+    padding: 5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    box-sizing: border-box;
+    margin: auto;
 }
-.kolom{
-    width: 300px; /* Atur lebar kotak */
-    height: 40px; /* Atur tinggi kotak */
-    /* background-color:#fff; Warna latar belakang */
-    margin-left: 78px;
-    border-radius: 10px;
-    margin-top: 50px; /* Sesuaikan margin top sesuai keinginan Anda */
+
+.gambar {
+    text-align: center;
+    margin-bottom: 5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+}
+
+.kolom {
+    width: 100%;
+    height: 5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    margin-top: 2vw; /* Sesuaikan margin top sesuai keinginan Anda */
+    box-sizing: border-box;
+    font-size: 3vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
 }
 .mt-40{
     margin-top: 40px;
@@ -35,22 +69,36 @@ body{
 .mt-20{
     margin-top: 20px;
 }
+.mt-50x {
+    width: 70%; /* Sesuaikan lebar kolom sesuai kebutuhan Anda */
+    height: 5vw;
+    margin-top: 2vw;
+    box-sizing: border-box;
+    font-size: 3vw;
+}
+
+@media (min-width: 48em) {
+	.mt-50x{
+		width: 50%;
+	}
+}
 
 .mt-50{
     margin-top: 50px;
 }
-.tombol{
-    padding-left: 110px;
-    border: none;
-    margin-top: 35px;
+.tombol {
+    text-align: center;
+    margin-top: 2vw; /* Sesuaikan margin top sesuai keinginan Anda */
 }
+
 .close {
     position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
+    right: 2vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    top: 2vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    font-size: 4vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
     font-weight: bold;
     color: #f1f1f1;
+    cursor: pointer;
 }
 .close:hover,
 .close:focus {
@@ -68,11 +116,9 @@ body{
     font-size: small;
 }
 .center-button {
-    text-align: center; /* Mengatur alignment teks ke tengah */
+    text-align: center;
     color: white;
     font-family: 'Vollkorn';
-    margin-top: 15px;
+    margin-top: 2vw; /* Sesuaikan margin top sesuai keinginan Anda */
+    font-size: 1.5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
 }
-
-
-

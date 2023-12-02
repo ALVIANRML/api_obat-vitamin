@@ -15,12 +15,15 @@
     <div>
 
         <p class="teks"> Vitality </p>
-        <p class="teks2"> Your health start here. </p>
-            <center>
-                <a class="clickbtn" href="/menu">
-                    <button type="button" class="btn"> MULAI </button>
-                </a>
-            </center>
+            <p class="teks2"><a href="#home2">Your health start here. </a></p>
+            <section id="home2" class="home2">
+                <center>
+                    <a class="clickbtn" href="/menu">
+                        <button type="button" class="btn"> MULAI </button>
+                    </a>
+                </center>
+            </section>
+        </section>
         </div>
     </div>
 
