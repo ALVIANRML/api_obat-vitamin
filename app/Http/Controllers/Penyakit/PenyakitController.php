@@ -21,6 +21,19 @@ class PenyakitController extends Controller
 
         return view('menu.penyakit', ['penyakit' => $penyakitResults]);
     }
+    public function harga()
+    {
+
+        $penyakit = penyakit::query(); // Gunakan query() untuk memulai query builder
+
+        if (request()->has('search')) {
+            $penyakit->where('nama', 'like', '%' . request()->input('search') . '%');
+        }
+
+        $penyakitResults = $penyakit->get(); // Ambil hasil query
+
+        return view('menu.pembelian', ['penyakit' => $penyakitResults]);
+    }
 
 
     /**

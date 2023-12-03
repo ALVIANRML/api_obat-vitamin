@@ -3,8 +3,8 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Obatvitamin\ObatvitaminController;
 use App\Http\Controllers\Penyakit\PenyakitController;
-use App\Http\Controllers\Vitality\VitalityController;
-use App\Http\Resources\Obatvitamin\Obatvitaminharga;
+
+
 use App\Models\penyakit;
 use Illuminate\Support\Facades\Route;
 
@@ -73,10 +73,6 @@ Route::get('/menu', function () {
     Route::get('/vitality', [ObatvitaminController::class,'harga'])->middleware('auth');
     // Route::get('/vitality-keranjang', [ObatvitaminController::class,'keranjang'])->middleware('auth');
 
-
-Route::get('/umur', function () {
-        return view('umur');
-    });
 
 
 

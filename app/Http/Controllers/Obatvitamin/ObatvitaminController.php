@@ -39,12 +39,6 @@ class ObatvitaminController extends Controller
 
         return view('menu.pembelian', ['obatvitamin' => $obatvitaminResults]);
     }
-    public function cariobat()
-    {
-
-        $obatvitamin = obatvitamin::get();
-
-    }
 
 
     /**

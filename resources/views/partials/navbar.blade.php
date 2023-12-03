@@ -24,7 +24,6 @@
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="login">
-                        {{-- <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45"> --}}
                         Login
                     </a>
                 </li>
