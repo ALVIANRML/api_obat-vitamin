@@ -103,7 +103,13 @@
                                 <h2><center> {{ $rumahsakits->nama }} </center></h2>
                                 <p class="keterangan-isi" id="popupAlamat"> Alamat: {{ $rumahsakits->alamat }}</p>
                                 <p class="keterangan-isi" id="popupKontak"> No. Rumah Sakit: {{ $rumahsakits->kontak }}</p>
-                                <p class="keterangan-isi" id="popupMap"> Maps: {{ $rumahsakits->map }}</p>
+                                <p class="keterangan-isi" id="popupKontak"> Maps:</p>
+                                <div class="mapouter">
+                                    <div class="gmap_canvas">
+                                        <!-- Ganti $rumahsakits->map dengan URL peta Google Maps -->
+                                        {!! $rumahsakits->map !!}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

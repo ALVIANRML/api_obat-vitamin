@@ -75,12 +75,12 @@
             @endif
 
             {{-- logo --}}
-            <div class="gambar mt-40">
+            <div class="gambar">
                 <img src="/gambar/logo pemweb.png"widht="120px" height="120px"  alt="logo vitality">
             </div>
             <form action="login" method = "post">
                 @csrf
-            <div class="kolom mt-50x" >
+            <div class="kolom mt-20" >
                 <input type="email" name="email" class="form-control @error('email')
                 is-invalid @enderror" id="email" autocomplete="email" placeholder="Email" autofocus required value="{{ old('email') }}">
                 @error('email')
@@ -89,7 +89,7 @@
                 </div>
                 @enderror
             </div>
-            <div class="kolom mt-40" >
+            <div class="kolom" >
                 <input type="password" name="password" autocomplete="password"
                  class="form-control
                 @error('password')

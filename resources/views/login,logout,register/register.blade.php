@@ -55,13 +55,13 @@ input[type="email"]
 
     <div class="container">
         <div class="kotak">
-            <div class="gambar mt-40">
+            <div class="gambar">
 
                 <img src="/gambar/logo pemweb.png"widht="120px" height="120px"  alt="logo vitality">
             </div>
             <form action="register" method = "post">
                 @csrf
-            <div class="kolom mt-40" >
+            <div class="kolom mt-20" >
                 <input type="text"  name="name" class="form-control @error('name')
                 is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('name') }}">
                 @error('name')
@@ -73,7 +73,7 @@ input[type="email"]
         {{-- <div class="error-message">{{ $message }}</div> --}}
 
             </div>
-            <div class="kolom mt-20" >
+            <div class="kolom" >
                 <input type="email" name="email" class="form-control @error('email')
                 is-invalid @enderror" id="email"  placeholder="Email" required value="{{ old('email') }}">
                 @error('email')
@@ -83,7 +83,7 @@ input[type="email"]
                 @enderror
             </div>
 
-            <div class="kolom mt-20" >
+            <div class="kolom" >
                 <input type="password"  name="password"  class="form-control
                 @error('password')
                 is-invalid @enderror" id="password"   placeholder="Kata Sandi" required>
@@ -94,7 +94,7 @@ input[type="email"]
                 @enderror
             </div>
 
-            <div class="tombol mt-40">
+            <div class="tombol mt-20">
                 <input type="submit" value="SUBMIT">
             </div>
         </form>

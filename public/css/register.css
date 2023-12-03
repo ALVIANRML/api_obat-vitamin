@@ -6,7 +6,7 @@
     .kolom {
         font-size: 14px; /* Sesuaikan ukuran font pada layar kecil */
         height: auto; /* Mengembalikan tinggi kolom ke otomatis */
-        margin-top: 20px; /* Sesuaikan margin top sesuai keinginan Anda */
+        margin-top: 5px; /* Sesuaikan margin top sesuai keinginan Anda */
     }
 
     .tombol {
@@ -53,20 +53,30 @@ body {
 
 .gambar {
     text-align: center;
-    margin-bottom: 5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    margin-bottom: 1vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .kolom {
     width: 100%;
     height: 5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
-    margin-top: 2vw; /* Sesuaikan margin top sesuai keinginan Anda */
+    /* margin-top: 2vw; Sesuaikan margin top sesuai keinginan Anda */
     box-sizing: border-box;
     font-size: 3vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+    display: flex;
+    align-items: center;
+
 }
 .mt-40{
     margin-top: 40px;
 }
 .mt-20{
+    margin-top: 20px;
+}
+.mt-10{
     margin-top: 20px;
 }
 .mt-50x {
@@ -121,4 +131,7 @@ body {
     font-family: 'Vollkorn';
     margin-top: 2vw; /* Sesuaikan margin top sesuai keinginan Anda */
     font-size: 1.5vw; /* Menggunakan vw agar sesuai dengan lebar viewport */
+}
+.kolom .invalid-feedback{
+    font-size: 15px;
 }
