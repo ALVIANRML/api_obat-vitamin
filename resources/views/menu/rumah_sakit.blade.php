@@ -7,7 +7,7 @@
     <link rel="icon" href="gambar/logo pemweb (1).png">
     <link rel="stylesheet" href="/css/rumahsakit.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,800;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,500;1,400;1,600&display=swap" rel="stylesheet"></head>
     <title> Rumah Sakit • Vitality </title>
 </head>
 
@@ -30,7 +30,7 @@
                                 <form action="logout" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item"><span class="material-symbols-outlined">
-                                    </span>log out</button>
+                                    </span>Log out</button>
                                 </form>
                                 </li>
                         </ul>
@@ -38,8 +38,7 @@
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="login">
-                            {{-- <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45"> --}}
-                            login
+                            Log in
                         </a>
                     </li>
                 @endauth
@@ -115,7 +114,24 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
 
+                {{-- footer --}}
+                <div class="footer-basic">
+                    <footer>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="/">Home</a></li>
+                            <li class="list-inline-item"><a href="/menu">Services</a></li>
+                            <li class="list-inline-item"><a href="#aboutus">About Us</a></li>
+                            <li class="list-inline-item"><a href="#copyright">Copyright</a></li>
+                        </ul>
+                          <section id="copyright">
+                              <p class="copyright"> Vitality © 2023</p>
+                          </section>
+                    </footer>
+                </div>
+
+        </div>
 
         <script>
                 function openPopup(index) {
@@ -126,6 +142,6 @@
                 }
             </script>
 
-            </div>
+
 </body>
 </html>

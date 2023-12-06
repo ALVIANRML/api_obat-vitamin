@@ -73,6 +73,9 @@ Route::get('/menu', function () {
     Route::get('/vitality', [ObatvitaminController::class,'harga'])->middleware('auth');
     // Route::get('/vitality-keranjang', [ObatvitaminController::class,'keranjang'])->middleware('auth');
 
-
+    //keranjang
+    Route::get('/keranjang', function () {
+        return view('keranjang');
+    });
 
 

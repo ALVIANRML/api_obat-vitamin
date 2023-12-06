@@ -38,7 +38,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="login">
                                 {{-- <img class="menu" src="gambar/Log-in.png" alt="Log-in" width="45" height="45"> --}}
-                                login
+                                Log in
                             </a>
                         </li>
                     @endauth
@@ -79,6 +79,80 @@
             </div>
         @endforeach
 
+        {{-- footer --}}
+        <div class="footer-basic">
+            <footer>
+                <section id="aboutus">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                          <center><h2> OUR TEAM </h2> </center>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                              <div class="member-img">
+                                <a href="https://www.instagram.com/virgiebeatrice/">
+                                    <img src="gambar/footer/virgie.jpg" alt="" class="img-fluid">
+                                </a>
+
+                              </div>
+                              <!-- member info -->
+                              <div class="member-info">
+                                <h4>Virgie Beatrice</h4>
+                                <span>NIM: 221401037</span>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- KE2 -->
+                          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                              <div class="member-img">
+                                  <a href="https://www.instagram.com/alvianrml/">
+                                    <img src="gambar/footer/alvian.jpg" alt="" class="img-fluid">
+                                </a>
+                              </div>
+                              <!-- member info -->
+                              <div class="member-info">
+                                <h4> ALVIAN </h4>
+                                <span>NIM: 221401085</span>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- KE3 -->
+                          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                              <div class="member-img">
+                                <a href="https://www.instagram.com/niirmalaaa/">
+                                    <img src="gambar/footer/nirmala.jpg" alt="nirmala" class="img-fluid">
+                                </a>
+                              </div>
+                              <!-- member info -->
+                              <div class="member-info">
+                                <h4> Nirmala Aizya Agatha Silalahi </h4>
+                                <span>NIM: 221401118</span>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                </section>
+                  <br> <hr>
+
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/">Home</a></li>
+                    <li class="list-inline-item"><a href="/menu">Services</a></li>
+                    <li class="list-inline-item"><a href="#aboutus">About Us</a></li>
+                    <li class="list-inline-item"><a href="#copyright">Copyright</a></li>
+                </ul>
+                  <section id="copyright">
+
+                      <p class="copyright"> Vitality © 2023</p>
+                  </section>
+            </footer>
+
+        </div>
         <script>
             function openPopup(index) {
                 document.getElementById(`popup${index + 1}`).style.display = "block";
