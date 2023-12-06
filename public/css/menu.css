@@ -43,6 +43,27 @@ footer, header, hgroup, menu, nav, section {
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 0;
+    }
+
+    .navbar-toggler {
+        background-color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+}
 @font-face {
     font-family: 'Poppins';
     src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
@@ -56,12 +77,10 @@ body {
     margin: 0;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .background {
-    background-color: #FFF5EF;
-    height: 200vh;
-    position: relative;
+.background {
+    background-size: cover;
 }
 
 .container {
@@ -236,12 +255,12 @@ body {
   .jual1 {
       background-color: #B35366;
     border-radius: 50px 8px 50px 8px;
-    width: 75%; /* Mengisi lebar kolom */
+    width: 95%; /* Mengisi lebar kolom */
     height: 305px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     display: flex;
-    margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
+    margin-bottom: 10px;
   }
 
   .gbr-jual {
@@ -267,12 +286,13 @@ body {
   .rumahsakit1 {
       background-color: #D85E69;
     border-radius: 50px 8px 50px 8px;
-    width: 75%; /* Mengisi lebar kolom */
+    width: 85%; /* Mengisi lebar kolom */
     height: 305px  ;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     display: flex;
-    margin-bottom: 10px; /* Jarak antar kotak dalam satu kolom */
+    margin-bottom: 10px;
+    margin-left: 38px;
 
   }
 
@@ -298,3 +318,57 @@ body {
       background-color: #EAA0A6;
   }
 
+  .footer-basic {
+    padding:40px 0;
+    background-color:#feddc8cc;
+    padding-top:50px;
+    padding-bottom: 50px;
+    margin-block-start: 10px;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+
+  .footer-basic li {
+    padding:0 10px;
+  }
+
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+
+  .footer-basic .copyright {
+    font-family: 'Poppins';
+    margin-top:15px;
+    text-align:center;
+    font-size:20px;
+    color:#bb8c9a;
+    margin-bottom:0;
+}
+
+  .list-inline {
+      font-family: 'Poppins';
+      color:#bb8c9a;
+  }
+
+  .nav-link {
+    font-family: 'Poppins';
+    font-weight: bold;
+    color:#230c0f;
+  }
+.nav-link:hover {
+    color: #92183D;
+}
