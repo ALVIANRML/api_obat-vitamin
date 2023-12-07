@@ -52,10 +52,9 @@
             <div class="picture">
             </div>
             <div class="textcontainer">
-                <form>
-                    <label for="pcs">Harga Persatuan:</label> <br>
-                    <input  id="pcs">
-                </form> <br>
+
+                    <h2>Harga: {{ $obatvitamin->harga }}</h2>
+                 <br>
                 <form>
                     <label for="kuantitas">Kuantitas:</label> <br>
                     <input type="number" id="quantity" class="quantity-input" value="1" min="1" onchange="calculateTotal(10000000000), 'quantity', 'total-price3')">
@@ -123,7 +122,7 @@
                       <!-- member info -->
                       <div class="member-info">
                         <h4>Virgie Beatrice</h4>
-                        <span>NIM: 221401037</span>
+                        <span>NIM: 221401034</span>
                       </div>
                     </div>
                   </div>
@@ -175,6 +174,7 @@
           </section>
     </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
