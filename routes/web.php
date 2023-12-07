@@ -77,5 +77,6 @@ Route::get('/menu', function () {
     Route::get('/keranjang', function () {
         return view('keranjang');
     });
+    Route::get('keranjang/{id}', [KeranjangController::class, 'index'])->name('keranjang');
 
 

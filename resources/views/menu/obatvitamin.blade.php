@@ -69,7 +69,7 @@
                                       <!-- member info -->
                                       <div class="member-info">
                                         <h4>Virgie Beatrice</h4>
-                                        <span>NIM: 221401037</span>
+                                        <span>NIM: 221401034</span>
                                       </div>
                                     </div>
                                   </div>
