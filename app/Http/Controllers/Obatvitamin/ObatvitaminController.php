@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Obatvitamin;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Obatvitamin\Obatvitaminharga;
 use App\Http\Resources\Obatvitamin\ObatvitaminResource;
+use App\Models\Keranjang;
 use App\Models\obatvitamin;
 use Exception;
 use Illuminate\Http\Request;
@@ -44,27 +45,17 @@ class ObatvitaminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function quantity(Request $request)
     {
-        $request -> validate(
-            [
-                'nama'          =>'required',
-                'deskripsi'     =>'required',
-                'obat_dewasa'     =>'required',
-                'obat_anak' =>'required',
-                'harga' =>'required',
+        $validatedData = $request->validate([
+            'quantity'      => 'required',
 
-                ]);
-            $add = obatvitamin::create(
-                [
-                    'nama'      => $request->nama,
-                    'deskripsi' => $request->deskripsi,
-                    'obat_dewasa'   => $request->obat_dewasa,
-                    'obat_anak'      => $request->obat_anak,
-                    'harga'      => $request->harga,
+        ]);
+        Keranjang::create($validatedData);
 
-                ]);
-                return $add;
+        // $request->session()->flash('success', 'Registrasi berhasil. Silahkan login');
+        return redirect('keranjang{id}')->with('success', 'berhasil ditambahkan');
+        return redirect('/keranjang{id}');
     }
 
     /**
