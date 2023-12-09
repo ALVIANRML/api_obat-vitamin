@@ -47,41 +47,40 @@
 
 
 
-        <p class="text1"> {{ $obatvitamin->nama }} </p>
+        {{-- <p class="text1"> {{ $obatvitamin->nama }} </p>
         <div class="container">
             <div class="picture">
                 <img class="picture" src="{{  asset ($obatvitamin->gambar)}}" alt="">
-            </div>
+            </div> --}}
+<h5 class="card-title">Detail pesanan</h5>
+<table>
+    <tr>
+        <td>nama</td>
+        <td> :{{ $order->name }}</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td> :{{ $order->phone }}</td>
+    </tr>
+    <tr>
+        <td>address</td>
+        <td> :{{ $order->address }}</td>
+    </tr>
+    <tr>
+        <td>quantity</td>
+        <td> :{{ $order->quantity }}</td>
+    </tr>
+    <tr>
+        <td>total harga</td>
+        <td> :{{ $order->total_price }}</td>
+    </tr>
+</table>
+<button class="btn btn-primary">bayar sekarang</button>
 
-            <form action="/checkout"method="POST">
-                @csrf
-            <div class="textcontainer">
-
-                    <h4>Harga:  </h4><p>{{ $obatvitamin->harga }}</p>
-                 <br>
-                 <form>
-                    <label class="keterangan" for="quantity">Kuantitas : </label><br>
-                    <input type="number" name="quantity" id="quantity" class="quantity-input" value="1" min="1">
-                    <br>
-                 </form>
-                 {{-- <form>
-                     <label for="total"> Total Harga: </label> <br>
-                     <p>{{ $keranjang->total_price }}</p>
-                    </form> --}}
-                    <div class="bio-pembeli">
-                       <br> <input type="text" class="input-payment" id="name" name="name" placeholder="Your name.."><br><br>
-                        <input type="text" class="input-payment" id="phone" name="phone" placeholder="Your phone number"><br><br>
-                        <textarea name="address" class="input-alamat" id="address" name="address" rows="3" placeholder="Your Address"></textarea>
-                    </div>
-                <button type="submit" class="btn btn-primary">Checkout</button>
-                {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#paymentModal"> --}}
-                    {{-- Bayar
-                </button> --}}
-            </form>
             </div>
         </div>
 
-    <!-- Modal untuk pembayaran -->
+    {{-- <!-- Modal untuk pembayaran -->
     <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -108,7 +107,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 

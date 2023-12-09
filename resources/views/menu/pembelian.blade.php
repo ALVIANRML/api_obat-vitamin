@@ -88,13 +88,14 @@
                                     <p class="keterangan"> Dosis Anak   : </p>
                                     <p class="keterangan-isi">{{ $obatvitamins->obat_anak }} <br></p>
                                     <hr class="hr">
-                                    <label class="keterangan" for="quantity {{ $obatvitamins->id }}">Kuantitas : </label><br>
-                                    <input type="number" id="quantity{{ $obatvitamins->id }}" class="quantity-input" value="1" min="1" onchange="calculateTotal(10000000000, 'quantity{{ $obatvitamins->id }}', 'total-price3')">
-                                    <p class="keterangan"> Harga   : </p>
-                                    <p id="total-price{{ $obatvitamins->id }}" class="keterangan-isi">Rp. {{ $obatvitamins->harga }} <br></p>
+                                    <label class="keterangan" for="quantity{{ $obatvitamins->id }}">Kuantitas : </label><br>
+<input type="number" id="quantity class="quantity-input" value="1" min="1">
+<p class="keterangan"> Harga   : </p>
+<p id="total-price{{ $obatvitamins->id }}" class="keterangan-isi">Rp. {{ $obatvitamins->harga }} <br></p>
+
 
                                         <div class="button-container">
-                                            <a href="/keranjang">
+                                            <a href="{{ route('keranjang', ['id' => $obatvitamins->id]) }}">
                                                 <button class="buy-button1" onclick="buyItem('{{ $obatvitamins->nama }}', '{{ $obatvitamins->gambar }}', '{{ $obatvitamins->harga }}', 'quantity{{ $obatvitamins->id }}')"> Keranjang </button>
                                             </a> <br>
                                         </div>

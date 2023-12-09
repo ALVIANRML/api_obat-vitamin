@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('id_vitality')->nullable();
             $table->uuid('penyakit_id')->nullable();
             $table->uuid('obatvitamin_id')->nullable();
+            $table->integer('quantitity')->nullable();
             $table->timestamps();
 
             $table->foreign('obatvitamin_id')

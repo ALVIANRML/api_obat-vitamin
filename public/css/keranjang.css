@@ -86,17 +86,18 @@
     }
 
     .picture {
-        height: 250px;
-        width: 30%;
+        height: 100%;
+        width: auto;
         margin-top: 10px;
         margin-left: 160px;
-        background-color:#92183D;
         border-radius: 7px;
     }
 
     .picture img{
         max-width: 100%;
         height: 100px;
+        height: 80%;
+        width: auto;
         display: block; /* Mencegah adanya margin bawah pada gambar */
         margin: auto;   /*  Memberikan efek centering */
     }

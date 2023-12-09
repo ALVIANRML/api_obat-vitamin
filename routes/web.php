@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Obatvitamin\ObatvitaminController;
-use App\Http\Controllers\Penyakit\PenyakitController;
-
-
 use App\Models\penyakit;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
+
+
+use App\Http\Controllers\Penyakit\PenyakitController;
+use App\Http\Controllers\Keranjang\KeranjangController;
+use App\Http\Controllers\Rumahsakit\RumahsakitController;
+use App\Http\Controllers\Obatvitamin\ObatvitaminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,12 +73,16 @@ Route::get('/menu', function () {
         return view('menu/pembelian');
     });
     Route::get('/vitality', [ObatvitaminController::class,'harga'])->middleware('auth');
+    Route::post('/vitality', [ObatvitaminController::class,'store'])->middleware('auth');
+    Route::post('/vitality', [ObatvitaminController::class,'quantity'])->middleware('auth');
     // Route::get('/vitality-keranjang', [ObatvitaminController::class,'keranjang'])->middleware('auth');
 
     //keranjang
-    Route::get('/keranjang', function () {
+    Route::get('/keranjang/{id}', function () {
         return view('keranjang');
     });
     Route::get('keranjang/{id}', [KeranjangController::class, 'index'])->name('keranjang');
+
+    Route::post('checkout', [KeranjangController::class, 'checkout']);
 
 
