@@ -123,7 +123,7 @@
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
                               <div class="member-img">
                                 <a href="https://www.instagram.com/niirmalaaa/">
-                                    <img src="gambar/footer/nirmala.jpg" alt="nirmala" class="img-fluid">
+                                    <img src="{{ asset('gambar/footer/nirmala.jpg') }}" alt="nirmala" class="img-fluid">
                                 </a>
                               </div>
                               <!-- member info -->

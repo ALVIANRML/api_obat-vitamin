@@ -49,7 +49,7 @@
                 Vitamin dan Obat
             </p>
             <div class="search-container">
-                <form action="/pembelian" method="GET">
+                <form action="/vitality" method="GET">
                 <input type="text" class="search-input" name="search" placeholder="Search...">
                 <button type="submit" class="search-button"> Search </button>
                 </form>
